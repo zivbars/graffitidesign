@@ -28,7 +28,7 @@
 - אפשרות למבצעים (sale prices)
 - סימון כמוצר מומלץ (featured)
 
----
+---.
 
 ## 👥 זרימות משתמשים (User Flows)
 
