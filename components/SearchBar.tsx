@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { products } from '@/data/products';
 import { Product } from '@/types/product';
 import { formatPrice } from '@/lib/formatPrice';
@@ -90,7 +91,6 @@ export default function SearchBar() {
           placeholder="חיפוש מוצרים..."
           className="w-full px-4 py-2 pr-10 pl-10 rounded-full border-2 border-base-gray focus:border-primary-turquoise focus:outline-none bg-white transition-all"
           aria-label="חיפוש מוצרים"
-          aria-expanded={isOpen}
           aria-controls="search-results"
         />
         
@@ -154,11 +154,13 @@ export default function SearchBar() {
               aria-selected={index === selectedIndex}
             >
               {/* Product Image */}
-              <div className="w-20 h-20 bg-base-gray/20 rounded-lg flex-shrink-0">
-                <img
+              <div className="w-20 h-20 bg-base-gray/20 rounded-lg flex-shrink-0 relative">
+                <Image
                   src={product.images[0]}
                   alt={product.name}
-                  className="w-full h-full object-cover rounded-lg"
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="80px"
                 />
               </div>
 
