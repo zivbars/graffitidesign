@@ -1,0 +1,10 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F5F2"/>
+  <circle cx="200" cy="150" r="100" fill="#C04182" opacity="0.2"/>
+  <circle cx="1000" cy="480" r="120" fill="#49B4A3" opacity="0.2"/>
+  <circle cx="600" cy="300" r="80" fill="#D0A32D" opacity="0.2"/>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="72" fill="#C04182" text-anchor="middle" font-weight="bold">Graffiti Designs</text>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="36" fill="#1A1A1A" text-anchor="middle">גרפיטי עיצובים</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="24" fill="#666" text-anchor="middle">מוצרי דפוס בעיצוב ייחודי ומקורי</text>
+</svg>
+

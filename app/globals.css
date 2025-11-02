@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-base-gray;
+  }
+
+  body {
+    @apply bg-base-white text-base-black;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-base-gray rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-turquoise;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-primary-turquoise;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Video container styles */
+.video-hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.video-hero-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(192, 65, 130, 0.3), rgba(73, 180, 163, 0.3));
+  z-index: 1;
+}
+
+/* Carousel dot indicators */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #E1E1E1;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-dot:hover {
+  background-color: #49B4A3;
+}
+
+.carousel-dot.active {
+  background-color: #C04182;
+  width: 1.5rem;
+}
+
+/* Search dropdown animations */
+.search-dropdown {
+  animation: slideIn 0.3s ease-out;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.search-result-item {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+  background-color: #F7F5F2;
+}
+

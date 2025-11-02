@@ -1,0 +1,14 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="wood" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="#F7F5F2"/>
+      <line x1="0" y1="20" x2="200" y2="20" stroke="#E1E1E1" stroke-width="1" opacity="0.3"/>
+      <line x1="0" y1="60" x2="200" y2="60" stroke="#E1E1E1" stroke-width="1" opacity="0.2"/>
+      <line x1="0" y1="100" x2="200" y2="100" stroke="#E1E1E1" stroke-width="1" opacity="0.25"/>
+      <line x1="0" y1="140" x2="200" y2="140" stroke="#E1E1E1" stroke-width="1" opacity="0.2"/>
+      <line x1="0" y1="180" x2="200" y2="180" stroke="#E1E1E1" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#wood)"/>
+</svg>
+
