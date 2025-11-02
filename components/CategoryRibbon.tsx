@@ -27,9 +27,32 @@ export default function CategoryRibbon() {
           גלו את הקטגוריות שלנו
         </h2>
         
-        {/* Categories Grid */}
+        {/* Categories Grid - Mobile: Horizontal Scroll, Desktop: Grid */}
         <div className="relative max-w-6xl mx-auto">
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-3 pb-4 pt-2">
+          {/* Mobile: Horizontal Scrollable */}
+          <div className="md:hidden overflow-x-auto scrollbar-hide pb-4 pt-2 -mx-4 px-4">
+            <div className="flex gap-3 min-w-max">
+              {categories.map(([key, label]) => (
+                <Link
+                  key={key}
+                  href={`/shop?category=${key}`}
+                  className="flex-shrink-0"
+                >
+                  <div className="group w-[120px] aspect-square bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-2 border-2 border-transparent hover:border-primary-pink will-change-transform">
+                    <span className="text-4xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      {categoryIcons[key]}
+                    </span>
+                    <span className="text-xs font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
+                      {label}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid grid-cols-8 gap-3 pb-4 pt-2">
             {categories.map(([key, label]) => (
               <Link
                 key={key}
@@ -37,10 +60,10 @@ export default function CategoryRibbon() {
                 className="flex justify-center"
               >
                 <div className="group w-full aspect-square max-w-[140px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-2 border-2 border-transparent hover:border-primary-pink will-change-transform">
-                  <span className="text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <span className="text-5xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
                     {categoryIcons[key]}
                   </span>
-                  <span className="text-xs md:text-sm font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
+                  <span className="text-sm font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
                     {label}
                   </span>
                 </div>
