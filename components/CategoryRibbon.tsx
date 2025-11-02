@@ -7,7 +7,7 @@ const categoryIcons: Record<Category, string> = {
   envelopes: '✉️',
   cards: '💌',
   'recipe-books': '📖',
-  magnets: '🧲',
+  magnets: '🖼️',
   planners: '📅',
   printables: '🖨️',
   notebooks: '📓',
@@ -19,28 +19,28 @@ export default function CategoryRibbon() {
 
   return (
     <section
-      className="bg-gradient-to-b from-base-white to-white py-12"
+      className="bg-gradient-to-b from-base-white to-white py-10"
       aria-label="קטגוריות מוצרים"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-base-black mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-base-black mb-6">
           גלו את הקטגוריות שלנו
         </h2>
         
-        {/* Horizontal Scroll Container */}
-        <div className="relative">
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+        {/* Categories Grid */}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-3 pb-4 pt-2">
             {categories.map(([key, label]) => (
               <Link
                 key={key}
                 href={`/shop?category=${key}`}
-                className="flex-shrink-0 snap-start"
+                className="flex justify-center"
               >
-                <div className="group w-40 h-40 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-3 border-2 border-transparent hover:border-primary-pink">
-                  <span className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                <div className="group w-full aspect-square max-w-[140px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-2 border-2 border-transparent hover:border-primary-pink will-change-transform">
+                  <span className="text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
                     {categoryIcons[key]}
                   </span>
-                  <span className="text-base font-semibold text-base-black group-hover:text-primary-pink transition-colors">
+                  <span className="text-xs md:text-sm font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
                     {label}
                   </span>
                 </div>
@@ -48,11 +48,6 @@ export default function CategoryRibbon() {
             ))}
           </div>
         </div>
-
-        {/* Hint Text */}
-        <p className="text-center text-sm text-gray-500 mt-6">
-          ← גלול לצפייה בכל הקטגוריות →
-        </p>
       </div>
 
       <style jsx>{`

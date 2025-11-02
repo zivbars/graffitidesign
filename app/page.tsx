@@ -108,7 +108,7 @@ export default function HomePage() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="container mx-auto px-4 py-16 bg-base-white/80 backdrop-blur-sm">
+        <section className="container mx-auto px-4 pb-2 bg-base-white/80 backdrop-blur-sm">
           <Newsletter />
         </section>
       </div>

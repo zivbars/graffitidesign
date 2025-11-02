@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { products } from '@/data/products';
 import { Category, categoryNames } from '@/types/product';
 import ProductCard from '@/components/ProductCard';
@@ -9,11 +10,27 @@ import { useCart } from '@/stores/cart';
 
 type SortOption = 'newest' | 'price-low' | 'price-high' | 'popular';
 
-export default function ShopPage() {
-  const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
+function ShopContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  
+  // Initialize with category from URL if valid, otherwise 'all'
+  const initialCategory = categoryParam && Object.keys(categoryNames).includes(categoryParam) 
+    ? (categoryParam as Category) 
+    : 'all';
+  
+  const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>(initialCategory);
   const [sortBy, setSortBy] = useState<SortOption>('newest');
   const [itemsToShow, setItemsToShow] = useState(12);
   const [isLoading, setIsLoading] = useState(false);
+  
+  // Update selected category when URL parameter changes
+  useEffect(() => {
+    if (categoryParam && Object.keys(categoryNames).includes(categoryParam)) {
+      setSelectedCategory(categoryParam as Category);
+      setItemsToShow(12); // Reset items to show when category changes
+    }
+  }, [categoryParam]);
   
   const addToCart = useCart((state) => state.add);
 
@@ -181,6 +198,21 @@ export default function ShopPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white/85 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-turquoise mx-auto mb-4"></div>
+          <p className="text-gray-600">טוען...</p>
+        </div>
+      </div>
+    }>
+      <ShopContent />
+    </Suspense>
   );
 }
 

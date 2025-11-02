@@ -31,30 +31,30 @@ export default function StoryStrip() {
 
   return (
     <section
-      className="relative py-16 bg-gradient-to-r from-primary-pink/5 via-primary-turquoise/5 to-primary-mustard/5"
+      className="relative py-10 bg-gradient-to-r from-primary-pink/5 via-primary-turquoise/5 to-primary-mustard/5"
       aria-label="ערכי המותג"
     >
       <div className="container mx-auto px-4">
         {/* Made in Israel Badge */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border-2 border-primary-turquoise">
-            <span className="text-2xl">🇮🇱</span>
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center gap-3 bg-white px-5 py-2.5 rounded-full shadow-lg border-2 border-primary-turquoise">
+            <span className="text-xl">🇮🇱</span>
             <span className="font-bold text-base-black">מיוצר בישראל</span>
-            <span className="text-2xl">🇮🇱</span>
+            <span className="text-xl">🇮🇱</span>
           </div>
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {values.map((value, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 text-center"
+              className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 text-center"
             >
-              <div className="flex justify-center mb-4 text-primary-pink group-hover:text-primary-turquoise transition-colors">
+              <div className="flex justify-center mb-3 text-primary-pink group-hover:text-primary-turquoise transition-colors scale-90">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-base-black mb-3">
+              <h3 className="text-lg font-bold text-base-black mb-2">
                 {value.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">

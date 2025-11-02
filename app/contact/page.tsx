@@ -89,8 +89,9 @@ export default function ContactPage() {
                 }
                 required
                 pattern="[0-9]{9,10}"
-                className="w-full px-4 py-3 rounded-lg border border-base-gray focus:outline-none focus:ring-2 focus:ring-primary-turquoise"
+                className="w-full px-4 py-3 rounded-lg border border-base-gray focus:outline-none focus:ring-2 focus:ring-primary-turquoise text-right"
                 placeholder="050-1234567"
+                dir="rtl"
               />
             </div>
 
@@ -146,10 +147,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-base-black mb-1">טלפון</h3>
                   <a
-                    href="tel:+972501234567"
+                    href="tel:+972505752939"
                     className="text-gray-600 hover:text-primary-pink transition-colors"
                   >
-                    050-123-4567
+                    050-5752939
                   </a>
                 </div>
               </div>
@@ -175,44 +176,11 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-base-black mb-1">אימייל</h3>
                   <a
-                    href="mailto:info@graffiti-designs.co.il"
+                    href="mailto:graffitidesign6@gmail.com"
                     className="text-gray-600 hover:text-primary-pink transition-colors"
                   >
-                    info@graffiti-designs.co.il
+                    graffitidesign6@gmail.com
                   </a>
-                </div>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary-mustard/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-primary-mustard"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-base-black mb-1">כתובת</h3>
-                  <p className="text-gray-600">
-                    רח&apos; היצירה 10<br />
-                    תל אביב, ישראל
-                  </p>
                 </div>
               </div>
             </div>
@@ -270,22 +238,6 @@ export default function ContactPage() {
               </a>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Map */}
-      <div className="mt-12 max-w-6xl mx-auto">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.5989653087836!2d34.78177931516893!3d32.07090598119144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDA0JzE1LjMiTiAzNMKwNDYnNTkuMSJF!5e0!3m2!1sen!2sil!4v1234567890123!5m2!1sen!2sil"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="מיקום גרפיטי עיצובים"
-          />
         </div>
       </div>
         </div>

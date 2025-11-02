@@ -10,7 +10,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartBounce, setCartBounce] = useState(false);
   const pathname = usePathname();
-  const getTotalItems = useCart((state) => state.getTotalItems);
+  const items = useCart((state) => state.items);
   const hydrate = useCart((state) => state.hydrate);
   const isHydrated = useCart((state) => state.isHydrated);
   const prevTotalItems = useRef(0);
@@ -19,7 +19,7 @@ export default function Header() {
     hydrate();
   }, [hydrate]);
 
-  const totalItems = isHydrated ? getTotalItems() : 0;
+  const totalItems = isHydrated ? items.reduce((total, item) => total + item.quantity, 0) : 0;
 
   // Trigger bounce animation when cart items change
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function Header() {
           >
             <span style={{ color: '#C04182' }}>Graffiti</span>
             {' '}
-            <span style={{ color: '#49B4A3' }}>Designs</span>
+            <span style={{ color: '#49B4A3' }}>Design</span>
           </Link>
 
           {/* Search Bar - Desktop */}

@@ -34,7 +34,7 @@ export default function LoadingTransition() {
         {/* Logo */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4">
           <span className="bg-gradient-to-r from-primary-pink via-primary-turquoise to-primary-mustard bg-clip-text text-transparent animate-shimmer">
-            Graffiti Designs
+            Graffiti Design
           </span>
         </h1>
         

@@ -137,7 +137,7 @@ export default function SearchBar() {
       {isOpen && results.length > 0 && (
         <div
           id="search-results"
-          className="search-dropdown absolute top-full mt-2 w-full bg-white rounded-2xl border-2 border-base-gray z-50 max-h-96 overflow-y-auto"
+          className="search-dropdown absolute top-full mt-2 w-full min-w-[400px] lg:min-w-[500px] bg-white rounded-2xl border-2 border-base-gray z-50 max-h-96 overflow-y-auto shadow-xl"
           role="listbox"
         >
           {results.map((product, index) => (
@@ -154,7 +154,7 @@ export default function SearchBar() {
               aria-selected={index === selectedIndex}
             >
               {/* Product Image */}
-              <div className="w-16 h-16 bg-base-gray/20 rounded-lg flex-shrink-0">
+              <div className="w-20 h-20 bg-base-gray/20 rounded-lg flex-shrink-0">
                 <img
                   src={product.images[0]}
                   alt={product.name}
@@ -164,16 +164,16 @@ export default function SearchBar() {
 
               {/* Product Info */}
               <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-base-black truncate">
+                <h4 className="font-semibold text-base-black line-clamp-2">
                   {product.name}
                 </h4>
-                <p className="text-sm text-gray-600 truncate">
+                <p className="text-sm text-gray-600 line-clamp-2 mt-1">
                   {product.description}
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-left font-bold text-primary-pink">
+              <div className="text-left font-bold text-primary-pink whitespace-nowrap flex-shrink-0">
                 {formatPrice(product.price)}
               </div>
             </Link>

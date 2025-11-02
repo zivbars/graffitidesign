@@ -42,7 +42,7 @@ export default function HeroVideo() {
         <div className="container mx-auto px-4 text-center animate-fadeIn">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-lg">
             <span className="bg-gradient-to-r from-primary-pink via-primary-turquoise to-primary-mustard bg-clip-text text-transparent">
-              Graffiti Designs
+              Graffiti Design
             </span>
           </h1>
           <p className="text-2xl md:text-4xl text-white mb-4 drop-shadow-md font-medium">
@@ -60,10 +60,27 @@ export default function HeroVideo() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <button
+        onClick={() => {
+          const nextSection = document.querySelector('[aria-label="קטגוריות מוצרים"]');
+          if (nextSection) {
+            const headerHeight = 80; // גובה ה-header
+            const extraPadding = 20; // מרווח נוסף
+            const elementPosition = nextSection.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight - extraPadding;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+        aria-label="גלול למטה"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-white opacity-75"
+          className="h-8 w-8 text-white opacity-75 hover:opacity-100 transition-opacity"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -75,7 +92,7 @@ export default function HeroVideo() {
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>
-      </div>
+      </button>
     </section>
   );
 }

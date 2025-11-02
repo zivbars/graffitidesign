@@ -64,8 +64,8 @@ export default function PartnersPage() {
               </p>
               <p className="text-gray-700">
                 עיצוב מקורי, מוכן להזמנה - כל המוצרים שלנו מגיעים בעיצוב קבוע וללא
-                אפשרות התאמה אישית. זה מאפשר לנו לשמור על עקביות באיכות ולהציע
-                מחירים משתלמים.
+                אפשרות התאמה אישית, מה שמאפשר לנו לשמור על איכות גבוהה ועקביות
+                בעיצוב ואספקה.
               </p>
             </div>
           </div>
@@ -73,61 +73,41 @@ export default function PartnersPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="bg-base-gray/20 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-base-black mb-6">
-              מפת סניפים אינטראקטיבית
-            </h2>
-            <div className="bg-white rounded-lg shadow-md p-16">
-              <div className="flex flex-col items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-24 w-24 text-gray-300 mb-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                  בקרוב...
-                </h3>
-                <p className="text-gray-600">
-                  אנחנו עובדים על מפה אינטראקטיבית שתאפשר לכם למצוא את הסניף הקרוב
-                  אליכם
-                </p>
-              </div>
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-base-black mb-8 text-center">
+            מפת סניפים אינטראקטיבית
+          </h2>
+          <div className="bg-white rounded-lg shadow-md p-12">
+            <div className="flex flex-col items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-20 w-20 text-gray-300 mb-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                בקרוב...
+              </h3>
+              <p className="text-gray-600 text-center">
+                אנחנו עובדים על מפה אינטראקטיבית שתאפשר לכם למצוא את הסניף הקרוב אליכם
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-primary-pink to-primary-turquoise rounded-2xl p-12 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            קנו ישירות מהאתר שלנו
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            מגוון רחב יותר, מבצעים בלעדיים, ומשלוח מהיר לכל הארץ
-          </p>
-          <Link href="/shop">
-            <Button size="lg" className="bg-white text-primary-pink hover:bg-base-white px-12">
-              לחנות המקוונת
-            </Button>
-          </Link>
         </div>
       </section>
       </div>

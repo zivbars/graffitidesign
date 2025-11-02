@@ -7,7 +7,7 @@ import { useCart } from '@/stores/cart';
 import { formatPrice } from '@/lib/formatPrice';
 import Button from '@/components/Button';
 
-type ShippingOption = 'standard' | 'express' | 'pickup';
+type ShippingOption = 'standard' | 'pickup';
 
 export default function CartPage() {
   const items = useCart((state) => state.items);
@@ -25,13 +25,11 @@ export default function CartPage() {
 
   const shippingCosts = {
     standard: 25,
-    express: 40,
     pickup: 0,
   };
 
   const shippingLabels = {
     standard: 'משלוח רגיל (3-5 ימים)',
-    express: 'משלוח מהיר (1-2 ימים)',
     pickup: 'איסוף עצמי',
   };
 
@@ -154,9 +152,26 @@ export default function CartPage() {
                     >
                       -
                     </button>
-                    <span className="w-12 text-center font-medium">
-                      {item.quantity}
-                    </span>
+                    <input
+                      type="number"
+                      min="1"
+                      max="99"
+                      value={item.quantity}
+                      onChange={(e) => {
+                        const value = parseInt(e.target.value);
+                        if (!isNaN(value) && value > 0) {
+                          updateQuantity(item.id, value);
+                        }
+                      }}
+                      onBlur={(e) => {
+                        // If empty or invalid, reset to 1
+                        const value = parseInt(e.target.value);
+                        if (isNaN(value) || value < 1) {
+                          updateQuantity(item.id, 1);
+                        }
+                      }}
+                      className="w-12 h-8 text-center font-medium border border-base-gray rounded focus:outline-none focus:ring-2 focus:ring-primary-turquoise focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    />
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                       className="w-8 h-8 rounded border border-base-gray hover:border-primary-pink hover:bg-primary-pink hover:text-white flex items-center justify-center transition-all duration-200 active:scale-90"
@@ -236,12 +251,63 @@ export default function CartPage() {
               </span>
             </div>
 
-            {/* Free Shipping Message */}
-            {subtotal < 200 && subtotal > 0 && (
-              <div className="mb-4 text-sm text-primary-turquoise bg-primary-turquoise/10 p-3 rounded-lg">
-                הוסף עוד {formatPrice(200 - subtotal)} לקבלת משלוח חינם!
+            {/* Order Info Messages */}
+            <div className="mb-4 space-y-2">
+              {/* Minimum Order */}
+              <div className={`text-sm p-3 rounded-lg border ${
+                subtotal < 125 
+                  ? 'bg-red-50 border-red-200 text-red-700' 
+                  : 'bg-green-50 border-green-200 text-green-700'
+              }`}>
+                <div className="flex items-center gap-2">
+                  {subtotal < 125 ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                  <div>
+                    <span className="font-semibold">מינימום הזמנה: 125 ש״ח</span>
+                    {subtotal < 125 && (
+                      <div className="text-xs mt-1">
+                        נותרו {formatPrice(125 - subtotal)} להשלמת מינימום ההזמנה
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
-            )}
+
+              {/* Free Shipping */}
+              <div className={`text-sm p-3 rounded-lg border ${
+                subtotal >= 200 
+                  ? 'bg-primary-turquoise/10 border-primary-turquoise text-primary-turquoise' 
+                  : 'bg-blue-50 border-blue-200 text-blue-700'
+              }`}>
+                <div className="flex items-center gap-2">
+                  {subtotal >= 200 ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                      <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                  <div>
+                    <span className="font-semibold">משלוח חינם מעל 200 ש״ח</span>
+                    {subtotal < 200 && subtotal > 0 && (
+                      <div className="text-xs mt-1">
+                        הוסף עוד {formatPrice(200 - subtotal)} לקבלת משלוח חינם!
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Total */}
             <div className="border-t border-base-gray pt-4 mb-6">

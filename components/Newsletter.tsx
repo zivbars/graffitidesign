@@ -25,12 +25,12 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary-turquoise to-primary-pink py-16 px-4 rounded-2xl">
+    <section className="bg-gradient-to-br from-primary-turquoise to-primary-pink py-2 px-4 rounded-2xl">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
           הישארו מעודכנים!
         </h2>
-        <p className="text-white/90 mb-8 text-lg">
+        <p className="text-white/90 mb-3 text-sm">
           הירשמו לניוזלטר שלנו וקבלו עדכונים על מוצרים חדשים, מבצעים מיוחדים
           והשראה לעיצוב
         </p>

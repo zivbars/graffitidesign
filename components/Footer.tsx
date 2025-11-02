@@ -35,13 +35,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-base-black text-white mt-16">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-base-black text-white">
+      <div className="container mx-auto px-4 py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold text-primary-pink mb-4">
-              Graffiti Designs
+              Graffiti Design
             </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               מוצרי דפוס בעיצוב ייחודי ומקורי. מיוצר בישראל במפעל המעסיק אנשים עם
