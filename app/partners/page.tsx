@@ -39,7 +39,7 @@ export default function PartnersPage() {
             const PartnerContent = (
               <div className="bg-white rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group border border-gray-100 h-full flex flex-col">
                 <div className="w-32 h-32 mx-auto bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-pink/5 transition-colors relative overflow-hidden">
-                  {showLogo ? (
+                  {showLogo && partner.logo ? (
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} logo`}
