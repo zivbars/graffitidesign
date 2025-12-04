@@ -19,56 +19,36 @@ export default function CategoryRibbon() {
 
   return (
     <section
-      className="bg-gradient-to-b from-base-white to-white py-10"
+      className="py-16 bg-gradient-to-b from-white via-gray-50 to-white relative z-10"
       aria-label="קטגוריות מוצרים"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-base-black mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-base-black mb-10">
           גלו את הקטגוריות שלנו
         </h2>
         
-        {/* Categories Grid - Mobile: Horizontal Scroll, Desktop: Grid */}
-        <div className="relative max-w-6xl mx-auto">
-          {/* Mobile: Horizontal Scrollable */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide pb-4 pt-2 -mx-4 px-4">
-            <div className="flex gap-3 min-w-max">
+        {/* Categories Container */}
+        <div className="relative max-w-7xl mx-auto">
+          {/* Mobile: Horizontal Scroll | Desktop: Grid */}
+          <div className="overflow-x-auto md:overflow-visible scrollbar-hide pb-6 -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="flex md:grid md:grid-cols-8 gap-4 md:gap-8 min-w-max md:min-w-0 justify-center">
               {categories.map(([key, label]) => (
                 <Link
                   key={key}
                   href={`/shop?category=${key}`}
-                  className="flex-shrink-0"
+                  className="group flex flex-col items-center gap-3 min-w-[100px]"
                 >
-                  <div className="group w-[120px] aspect-square bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-2 border-2 border-transparent hover:border-primary-pink will-change-transform">
-                    <span className="text-4xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-50 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300 flex items-center justify-center border border-gray-100 group-hover:border-primary-pink/20">
+                    <span className="text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300">
                       {categoryIcons[key]}
                     </span>
-                    <span className="text-xs font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
-                      {label}
-                    </span>
                   </div>
+                  <span className="text-sm font-medium text-gray-600 group-hover:text-primary-pink transition-colors text-center">
+                    {label}
+                  </span>
                 </Link>
               ))}
             </div>
-          </div>
-
-          {/* Desktop: Grid */}
-          <div className="hidden md:grid grid-cols-8 gap-3 pb-4 pt-2">
-            {categories.map(([key, label]) => (
-              <Link
-                key={key}
-                href={`/shop?category=${key}`}
-                className="flex justify-center"
-              >
-                <div className="group w-full aspect-square max-w-[140px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center justify-center gap-2 border-2 border-transparent hover:border-primary-pink will-change-transform">
-                  <span className="text-5xl group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                    {categoryIcons[key]}
-                  </span>
-                  <span className="text-sm font-semibold text-base-black group-hover:text-primary-pink transition-colors text-center px-2">
-                    {label}
-                  </span>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </div>

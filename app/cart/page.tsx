@@ -81,7 +81,7 @@ export default function CartPage() {
               />
             </svg>
           </div>
-          <h1 className="text-3xl font-bold text-base-black mb-4">
+          <h1 className="text-3xl font-bold font-fredoka text-base-black mb-4">
             העגלה שלך ריקה
           </h1>
           <p className="text-gray-600 text-lg mb-8">
@@ -103,250 +103,251 @@ export default function CartPage() {
       style={{ backgroundImage: "url('/checkout.png')" }}
     >
       {/* Overlay for better text readability */}
-      <div className="bg-white/85 min-h-screen">
+      <div className="bg-white/90 min-h-screen backdrop-blur-[2px]">
         <div className="container mx-auto px-4 py-12 animate-fadeIn">
-      <h1 className="text-4xl font-bold text-base-black mb-8">עגלת הקניות</h1>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Cart Items */}
-        <div className="lg:col-span-2 space-y-4">
-          {items.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl p-6 flex gap-4 transition-all duration-300"
-            >
-              {/* Image */}
-              <Link
-                href={`/product/${item.slug}`}
-                className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-base-gray/10"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  sizes="96px"
-                  className="object-cover"
-                />
-              </Link>
-
-              {/* Details */}
-              <div className="flex-1 flex flex-col justify-between">
-                <div>
-                  <Link href={`/product/${item.slug}`}>
-                    <h3 className="font-semibold text-base-black hover:text-primary-pink transition-colors">
-                      {item.name}
-                    </h3>
-                  </Link>
-                  <p className="text-primary-pink font-bold mt-1">
-                    {formatPrice(item.price)}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  {/* Quantity Controls */}
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="w-8 h-8 rounded border border-base-gray hover:border-primary-pink hover:bg-primary-pink hover:text-white flex items-center justify-center transition-all duration-200 active:scale-90"
-                      aria-label="הפחת כמות"
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      min="1"
-                      max="99"
-                      value={item.quantity}
-                      onChange={(e) => {
-                        const value = parseInt(e.target.value);
-                        if (!isNaN(value) && value > 0) {
-                          updateQuantity(item.id, value);
-                        }
-                      }}
-                      onBlur={(e) => {
-                        // If empty or invalid, reset to 1
-                        const value = parseInt(e.target.value);
-                        if (isNaN(value) || value < 1) {
-                          updateQuantity(item.id, 1);
-                        }
-                      }}
-                      className="w-12 h-8 text-center font-medium border border-base-gray rounded focus:outline-none focus:ring-2 focus:ring-primary-turquoise focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    />
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="w-8 h-8 rounded border border-base-gray hover:border-primary-pink hover:bg-primary-pink hover:text-white flex items-center justify-center transition-all duration-200 active:scale-90"
-                      aria-label="הוסף כמות"
-                    >
-                      +
-                    </button>
-                  </div>
-
-                  {/* Remove Button */}
-                  <button
-                    onClick={() => remove(item.id)}
-                    className="text-red-600 hover:text-red-700 text-sm font-medium"
-                  >
-                    הסר
-                  </button>
-                </div>
-              </div>
-
-              {/* Item Total */}
-              <div className="text-left">
-                <p className="font-bold text-lg">
-                  {formatPrice(item.price * item.quantity)}
-                </p>
-              </div>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-12 bg-primary-pink/10 rounded-full flex items-center justify-center text-primary-pink">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
             </div>
-          ))}
-
-          {/* Continue Shopping */}
-          <div className="pt-4">
-            <Link href="/shop">
-              <Button variant="outline" size="md">
-                ← המשך קניות
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Order Summary */}
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
-            <h2 className="text-2xl font-bold text-base-black mb-6">
-              סיכום הזמנה
-            </h2>
-
-            {/* Subtotal */}
-            <div className="flex justify-between mb-4 text-gray-700">
-              <span>סכום ביניים</span>
-              <span className="font-semibold">{formatPrice(subtotal)}</span>
-            </div>
-
-            {/* Shipping Options */}
-            <div className="mb-4">
-              <label className="block text-sm font-semibold text-base-black mb-2">
-                אפשרויות משלוח
-              </label>
-              <select
-                value={shippingOption}
-                onChange={(e) =>
-                  setShippingOption(e.target.value as ShippingOption)
-                }
-                className="w-full px-4 py-2 rounded-lg border border-base-gray focus:outline-none focus:ring-2 focus:ring-primary-turquoise"
-              >
-                {Object.entries(shippingLabels).map(([key, label]) => (
-                  <option key={key} value={key}>
-                    {label} - {shippingCosts[key as ShippingOption] === 0 ? 'חינם' : formatPrice(shippingCosts[key as ShippingOption])}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Shipping Cost */}
-            <div className="flex justify-between mb-4 text-gray-700">
-              <span>משלוח</span>
-              <span className="font-semibold">
-                {shipping === 0 ? 'חינם' : formatPrice(shipping)}
+            <h1 className="text-4xl md:text-5xl font-black font-fredoka text-base-black tracking-tight">
+              עגלת הקניות
+              <span className="text-lg md:text-xl font-normal text-gray-500 mr-4 font-heebo">
+                ({items.length} פריטים)
               </span>
-            </div>
+            </h1>
+          </div>
 
-            {/* Order Info Messages */}
-            <div className="mb-4 space-y-2">
-              {/* Minimum Order */}
-              <div className={`text-sm p-3 rounded-lg border ${
-                subtotal < 125 
-                  ? 'bg-red-50 border-red-200 text-red-700' 
-                  : 'bg-green-50 border-green-200 text-green-700'
-              }`}>
-                <div className="flex items-center gap-2">
-                  {subtotal < 125 ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  )}
-                  <div>
-                    <span className="font-semibold">מינימום הזמנה: 125 ש״ח</span>
-                    {subtotal < 125 && (
-                      <div className="text-xs mt-1">
-                        נותרו {formatPrice(125 - subtotal)} להשלמת מינימום ההזמנה
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Free Shipping */}
-              <div className={`text-sm p-3 rounded-lg border ${
-                subtotal >= 200 
-                  ? 'bg-primary-turquoise/10 border-primary-turquoise text-primary-turquoise' 
-                  : 'bg-blue-50 border-blue-200 text-blue-700'
-              }`}>
-                <div className="flex items-center gap-2">
-                  {subtotal >= 200 ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                      <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                    </svg>
-                  )}
-                  <div>
-                    <span className="font-semibold">משלוח חינם מעל 200 ש״ח</span>
-                    {subtotal < 200 && subtotal > 0 && (
-                      <div className="text-xs mt-1">
-                        הוסף עוד {formatPrice(200 - subtotal)} לקבלת משלוח חינם!
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Total */}
-            <div className="border-t border-base-gray pt-4 mb-6">
-              <div className="flex justify-between text-xl font-bold text-base-black">
-                <span>סה&quot;כ לתשלום</span>
-                <span className="text-primary-pink">{formatPrice(total)}</span>
-              </div>
-            </div>
-
-            {/* Checkout Button */}
-            <Button 
-              onClick={handleCheckout} 
-              size="lg" 
-              className="w-full bg-gradient-to-r from-primary-pink to-primary-turquoise hover:from-primary-turquoise hover:to-primary-pink transition-all duration-500"
-            >
-              המשך לתשלום
-            </Button>
-
-            {/* Security */}
-            <div className="mt-4 text-center text-sm text-gray-600">
-              <div className="flex items-center justify-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-primary-turquoise"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Cart Items */}
+            <div className="lg:col-span-2 space-y-6">
+              {items.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-3xl p-6 flex gap-6 transition-all duration-300 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 group"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>תשלום מאובטח</span>
+                  {/* Image */}
+                  <Link
+                    href={`/product/${item.slug}`}
+                    className="relative w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-gray-50 border border-gray-100"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      sizes="128px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </Link>
+
+                  {/* Details */}
+                  <div className="flex-1 flex flex-col justify-between py-1">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <Link href={`/product/${item.slug}`}>
+                          <h3 className="text-xl font-bold text-base-black hover:text-primary-pink transition-colors mb-1">
+                            {item.name}
+                          </h3>
+                        </Link>
+                        <p className="text-primary-pink font-bold text-lg">
+                          {formatPrice(item.price)}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => remove(item.id)}
+                        className="text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-red-50 rounded-full"
+                        aria-label="הסר פריט"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div className="flex items-end justify-between mt-4">
+                      {/* Quantity Controls */}
+                      <div className="flex items-center bg-gray-50 rounded-full p-1 border border-gray-200">
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          className="w-8 h-8 rounded-full bg-white shadow-sm hover:bg-primary-pink hover:text-white flex items-center justify-center transition-all duration-200 active:scale-95 text-gray-600 disabled:opacity-50"
+                          aria-label="הפחת כמות"
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          min="1"
+                          max="99"
+                          value={item.quantity}
+                          onChange={(e) => {
+                            const value = parseInt(e.target.value);
+                            if (!isNaN(value) && value > 0) {
+                              updateQuantity(item.id, value);
+                            }
+                          }}
+                          onBlur={(e) => {
+                            const value = parseInt(e.target.value);
+                            if (isNaN(value) || value < 1) {
+                              updateQuantity(item.id, 1);
+                            }
+                          }}
+                          className="w-12 text-center font-bold bg-transparent focus:outline-none text-base-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        />
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          className="w-8 h-8 rounded-full bg-white shadow-sm hover:bg-primary-pink hover:text-white flex items-center justify-center transition-all duration-200 active:scale-95 text-gray-600"
+                          aria-label="הוסף כמות"
+                        >
+                          +
+                        </button>
+                      </div>
+
+                      {/* Item Total */}
+                      <div className="text-left">
+                        <span className="text-xs text-gray-500 block">סה&quot;כ</span>
+                        <p className="font-black text-xl text-base-black">
+                          {formatPrice(item.price * item.quantity)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Continue Shopping */}
+              <div className="pt-6">
+                <Link href="/shop" className="inline-flex items-center text-gray-600 hover:text-primary-pink font-bold transition-colors group">
+                  <span className="group-hover:-translate-x-1 transition-transform">→</span>
+                  <span className="mr-2">המשך קניות</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Order Summary */}
+            <div className="lg:col-span-1">
+              <div className="bg-white rounded-3xl shadow-lg p-8 sticky top-24 border border-gray-100">
+                <h2 className="text-2xl font-black font-fredoka text-base-black mb-8 pb-4 border-b border-gray-100">
+                  סיכום הזמנה
+                </h2>
+
+                {/* Subtotal */}
+                <div className="flex justify-between mb-6 text-gray-600 font-heebo">
+                  <span>סכום ביניים</span>
+                  <span className="font-bold text-base-black text-lg">{formatPrice(subtotal)}</span>
+                </div>
+
+                {/* Shipping Options */}
+                <div className="mb-8">
+                  <label className="block text-sm font-bold text-base-black mb-3 font-heebo">
+                    שיטת משלוח
+                  </label>
+                  <div className="space-y-3">
+                    {Object.entries(shippingLabels).map(([key, label]) => (
+                      <label 
+                        key={key} 
+                        className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                          shippingOption === key 
+                            ? 'border-primary-turquoise bg-primary-turquoise/5' 
+                            : 'border-gray-100 hover:border-gray-200'
+                        }`}
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                            shippingOption === key ? 'border-primary-turquoise' : 'border-gray-300'
+                          }`}>
+                            {shippingOption === key && <div className="w-2.5 h-2.5 rounded-full bg-primary-turquoise" />}
+                          </div>
+                          <span className={`font-medium font-heebo ${shippingOption === key ? 'text-base-black' : 'text-gray-500'}`}>
+                            {label.split(' (')[0]}
+                          </span>
+                        </div>
+                        <span className="font-bold text-sm font-heebo">
+                          {shippingCosts[key as ShippingOption] === 0 ? 'חינם' : formatPrice(shippingCosts[key as ShippingOption])}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Shipping Cost */}
+                <div className="flex justify-between mb-6 text-gray-600 font-heebo">
+                  <span>דמי משלוח</span>
+                  <span className="font-bold text-base-black">
+                    {shipping === 0 ? 'חינם' : formatPrice(shipping)}
+                  </span>
+                </div>
+
+                {/* Order Info Messages */}
+                <div className="mb-8 space-y-3 font-heebo">
+                  {/* Minimum Order Progress */}
+                  <div className="bg-gray-50 rounded-xl p-4">
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="font-bold text-gray-700">מינימום הזמנה (125 ₪)</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <div 
+                        className={`h-full rounded-full transition-all duration-500 ${subtotal >= 125 ? 'bg-green-500' : 'bg-gray-400'}`}
+                        style={{ width: `${Math.min(100, (subtotal / 125) * 100)}%` }}
+                      />
+                    </div>
+                    {subtotal < 125 && (
+                      <p className="text-xs text-red-500 mt-2 font-medium">
+                        חסר עוד {formatPrice(125 - subtotal)} להשלמת ההזמנה
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Free Shipping Progress */}
+                  <div className="bg-primary-turquoise/5 rounded-xl p-4 border border-primary-turquoise/10">
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="font-bold text-primary-turquoise">משלוח חינם (מעל 200 ₪)</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <div 
+                        className="h-full rounded-full bg-primary-turquoise transition-all duration-500"
+                        style={{ width: `${Math.min(100, (subtotal / 200) * 100)}%` }}
+                      />
+                    </div>
+                    {subtotal < 200 && (
+                      <p className="text-xs text-gray-500 mt-2">
+                        עוד {formatPrice(200 - subtotal)} למשלוח חינם!
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Total */}
+                <div className="border-t-2 border-dashed border-gray-200 pt-6 mb-8">
+                  <div className="flex justify-between items-end font-fredoka">
+                    <span className="text-xl font-bold text-gray-600">סה&quot;כ לתשלום</span>
+                    <span className="text-4xl font-black text-primary-pink">{formatPrice(total)}</span>
+                  </div>
+                </div>
+
+                {/* Checkout Button */}
+                <button 
+                  onClick={handleCheckout}
+                  disabled={subtotal < 125}
+                  className={`w-full py-4 rounded-full font-bold text-xl font-fredoka transition-all duration-300 shadow-lg transform hover:-translate-y-1 ${
+                    subtotal < 125 
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none' 
+                      : 'bg-base-black text-white hover:shadow-xl hover:bg-primary-pink'
+                  }`}
+                >
+                  {subtotal < 125 ? 'לא הושג מינימום' : 'המשך לתשלום'}
+                </button>
+
+                {/* Security */}
+                <div className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-400 font-heebo">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  <span>תשלום מאובטח ומוצפן בתקן SSL</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
         </div>
       </div>
     </div>

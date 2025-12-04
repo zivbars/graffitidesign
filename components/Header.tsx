@@ -50,40 +50,31 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm shadow-sm"
-      style={{ 
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
-        borderBottom: '1px solid #E1E1E1'
-      }}
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm shadow-sm bg-white/90 border-b border-[#E1E1E1]"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo with gradient hover effect */}
+          {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold transition-all duration-300 hover-gradient-text"
-            style={{ letterSpacing: '0.5px' }}
+            className="flex flex-col leading-none font-fredoka font-bold transition-all duration-300 hover:opacity-80"
           >
-            <span style={{ color: '#C04182' }}>Graffiti</span>
-            {' '}
-            <span style={{ color: '#49B4A3' }}>Design</span>
+            <span className="text-[26px] text-[#E91E8C]">Graffiti</span>
+            <span className="text-[26px] text-[#00BCD4]">Design</span>
           </Link>
 
-          {/* Search Bar - Desktop */}
-          <div className="hidden lg:flex flex-1 max-w-md mx-8">
-            <SearchBar />
-          </div>
-
-          {/* Desktop Navigation - Capsule Style Buttons */}
-          <nav className="hidden lg:flex items-center gap-3">
+          {/* Desktop Navigation - Plain Text Links */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 mx-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-1.5 rounded-full font-medium transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md ${
-                  isActiveLink(link.href)
-                    ? 'bg-white text-[#C04182] underline'
-                    : 'bg-white text-[#C04182] hover:bg-[#C04182] hover:text-white'
+                className={`text-lg font-bold font-fredoka transition-colors duration-200 ${
+                  link.label === 'חנות'
+                    ? 'text-[#00BCD4] hover:text-[#00BCD4]/80'
+                    : isActiveLink(link.href)
+                    ? 'text-[#C04182]'
+                    : 'text-slate-800 hover:text-[#C04182]'
                 }`}
               >
                 {link.label}
@@ -91,18 +82,22 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right side: Cart + Mobile Menu */}
-          <div className="flex items-center gap-3">
+          {/* Right side: Search + Cart + Mobile Menu */}
+          <div className="flex items-center gap-4">
+            {/* Search Bar - Desktop */}
+            <div className="hidden lg:block w-64 xl:w-80">
+              <SearchBar />
+            </div>
+
             {/* Cart Icon */}
             <Link
               href="/cart"
-              className="relative p-2 hover:bg-white/50 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+              className="relative p-2 hover:bg-gray-100 rounded-full transition-all duration-300"
               aria-label="עגלת קניות"
-              style={{ color: '#C04182' }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-7 w-7 text-slate-800"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -116,7 +111,7 @@ export default function Header() {
               </svg>
               {totalItems > 0 && (
                 <span 
-                  className={`absolute -top-1 -left-1 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center ${
+                  className={`absolute -top-1 -right-1 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center ${
                     cartBounce ? 'animate-bounce' : ''
                   }`}
                   style={{ backgroundColor: '#C04182' }}
@@ -129,9 +124,8 @@ export default function Header() {
             {/* Mobile Menu Button (Hamburger) */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 hover:bg-white/50 rounded-full transition-all duration-300"
+              className="lg:hidden p-2 hover:bg-gray-100 rounded-full transition-all duration-300 text-slate-800"
               aria-label="תפריט"
-              style={{ color: '#C04182' }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,12 +166,12 @@ export default function Header() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-6 py-3 font-medium transition-colors duration-200 text-right ${
+                    className={`block px-6 py-3 font-bold font-fredoka transition-colors duration-200 text-right ${
                       isActiveLink(link.href)
                         ? 'underline'
                         : 'hover:bg-[#F7F5F2]'
                     }`}
-                    style={{ color: '#C04182' }}
+                    style={{ color: link.label === 'חנות' ? '#00BCD4' : '#C04182' }}
                   >
                     {link.label}
                   </Link>
