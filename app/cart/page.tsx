@@ -245,7 +245,8 @@ export default function CartPage() {
                   <div className="space-y-3">
                     {Object.entries(shippingLabels).map(([key, label]) => (
                       <label 
-                        key={key} 
+                        key={key}
+                        onClick={() => setShippingOption(key as ShippingOption)}
                         className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all ${
                           shippingOption === key 
                             ? 'border-primary-turquoise bg-primary-turquoise/5' 

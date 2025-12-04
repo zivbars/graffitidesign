@@ -106,7 +106,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {featuredProducts.map((product, index) => (
+              {featuredProducts.map((product) => (
                 <div key={product.id} className="transform hover:-translate-y-2 transition-transform duration-300">
                   <ProductCard product={product} />
                 </div>
@@ -139,9 +139,9 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {topReviews.map((review, i) => (
+              {topReviews.map((review) => (
                 <div key={review.id} className="h-full">
-                   <ReviewCard review={review} index={i} />
+                   <ReviewCard review={review} />
                 </div>
               ))}
             </div>
