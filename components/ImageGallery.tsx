@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ZoomIn } from 'lucide-react';
 
 interface ImageGalleryProps {
   images: string[];
@@ -12,30 +14,46 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <div className="space-y-4">
-      {/* Main Image - Full display without cropping */}
-      <div className="relative w-full rounded-lg overflow-hidden bg-white border border-base-gray/20" style={{ minHeight: '400px', maxHeight: '600px', height: '500px' }}>
-        <Image
-          src={images[selectedImage]}
-          alt={`${productName} - תמונה ${selectedImage + 1}`}
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-contain p-4"
-        />
+    <div className="space-y-4 select-none sticky top-24">
+      {/* Main Image */}
+      <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedImage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="relative w-full h-full"
+          >
+            <Image
+              src={images[selectedImage]}
+              alt={`${productName} - תמונה ${selectedImage + 1}`}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Zoom Icon */}
+        <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <ZoomIn size={20} />
+        </div>
       </div>
 
       {/* Thumbnails */}
       {images.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2">
+        <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide justify-center">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden snap-start transition-all bg-white border ${
+              className={`relative flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden snap-start transition-all duration-300 border-2 ${
                 selectedImage === index
-                  ? 'ring-4 ring-primary-pink border-primary-pink'
-                  : 'border-base-gray/20 opacity-60 hover:opacity-100'
+                  ? 'border-primary-pink scale-95 shadow-md'
+                  : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105 bg-white'
               }`}
             >
               <Image
@@ -43,7 +61,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
                 alt={`${productName} - תמונה ממוזערת ${index + 1}`}
                 fill
                 sizes="80px"
-                className="object-contain p-1"
+                className="object-cover"
               />
             </button>
           ))}

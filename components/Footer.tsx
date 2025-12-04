@@ -35,30 +35,36 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-base-black text-white">
-      <div className="container mx-auto px-4 py-3">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
+    <footer className="relative bg-base-white text-base-black mt-auto shadow-inner">
+      {/* Colorful top border */}
+      <div className="h-1.5 w-full bg-gradient-to-r from-primary-pink via-primary-turquoise to-primary-mustard" />
+      
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-bold text-primary-pink mb-4">
+          <div className="space-y-4">
+            <h3 className="text-3xl font-fredoka font-bold text-primary-pink">
               Graffiti Design
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed font-heebo max-w-sm">
               מוצרי דפוס בעיצוב ייחודי ומקורי. מיוצר בישראל במפעל המעסיק אנשים עם
-              מוגבלויות. איכות, יצירתיות ואחריות חברתית.
+              מוגבלויות. אנחנו מאמינים באיכות, יצירתיות ואחריות חברתית לקהילה.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">קישורים מהירים</h4>
-            <ul className="space-y-2">
+            <h4 className="text-xl font-fredoka font-semibold mb-6 text-primary-turquoise">
+              קישורים מהירים
+            </h4>
+            <ul className="grid grid-cols-2 gap-3 font-heebo">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-primary-turquoise transition-colors text-sm"
+                    className="text-gray-600 hover:text-primary-pink transition-colors text-base flex items-center gap-2 group"
                   >
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary-turquoise opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
                   </Link>
                 </li>
@@ -68,21 +74,28 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">הרשמה לעדכונים</h4>
+            <h4 className="text-xl font-fredoka font-semibold mb-6 text-primary-mustard">
+              הרשמה לעדכונים
+            </h4>
+            <p className="text-gray-600 text-sm font-heebo mb-4">
+              הירשמו לקבלת עדכונים על מבצעים חמים ומוצרים חדשים!
+            </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="האימייל שלך"
-                required
-                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-turquoise"
-              />
-              <Button type="submit" variant="secondary" size="sm" className="w-full">
+              <div className="relative">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="האימייל שלך"
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-base-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-turquoise focus:bg-white transition-all font-heebo"
+                />
+              </div>
+              <Button type="submit" variant="secondary" size="md" className="w-full rounded-xl font-fredoka font-medium hover:scale-[1.02] active:scale-95 transition-all shadow-sm">
                 הרשמה
               </Button>
               {showSuccess && (
-                <p className="text-primary-turquoise text-sm">
+                <p className="text-primary-turquoise text-sm font-heebo animate-fadeIn">
                   ✓ תודה על ההרשמה!
                 </p>
               )}
@@ -91,20 +104,26 @@ export default function Footer() {
         </div>
 
         {/* Social & Copyright */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm text-center md:text-right">
-            © כל הזכויות שמורות – גרפיטי עיצובים 2025
-          </p>
+        <div className="border-t border-gray-200 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6 font-heebo">
+          <div className="text-center md:text-right">
+            <p className="text-gray-500 text-sm">
+              © כל הזכויות שמורות – גרפיטי עיצובים {new Date().getFullYear()}
+            </p>
+            <p className="text-gray-400 text-xs mt-1">
+              נבנה באהבה בישראל 🇮🇱
+            </p>
+          </div>
+          
           <div className="flex gap-6">
             <a
               href="https://www.instagram.com/graffiti_designs"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-primary-pink transition-colors"
+              className="text-gray-400 hover:text-primary-pink transition-colors transform hover:scale-110"
               aria-label="Instagram"
             >
               <svg
-                className="h-6 w-6"
+                className="h-8 w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -115,11 +134,11 @@ export default function Footer() {
               href="https://www.facebook.com/graffitidesigns"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-primary-pink transition-colors"
+              className="text-gray-400 hover:text-primary-turquoise transition-colors transform hover:scale-110"
               aria-label="Facebook"
             >
               <svg
-                className="h-6 w-6"
+                className="h-8 w-8"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -132,4 +151,3 @@ export default function Footer() {
     </footer>
   );
 }
-

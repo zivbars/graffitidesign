@@ -33,11 +33,13 @@ export default function HeroVideo() {
         />
       )}
 
-      {/* Dark Overlay for Contrast */}
-      <div className="absolute inset-0 bg-black/40 z-0" />
-
-      {/* Inner Glow Animation */}
-      <div className="absolute inset-0 pointer-events-none z-0 animate-glow-pulse" />
+      {/* Gradient Overlay - darker in center for text readability */}
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{ 
+          background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.2) 100%)' 
+        }} 
+      />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
@@ -77,10 +79,16 @@ export default function HeroVideo() {
           </h1>
           
           <div className="space-y-4 mb-12">
-            <p className="text-3xl md:text-5xl text-white font-bold drop-shadow-lg">
+            <p 
+              className="text-3xl md:text-5xl text-white font-bold"
+              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3)' }}
+            >
               מוצרי דפוס בעיצוב ייחודי ומקורי
             </p>
-            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed">
+            <p 
+              className="text-xl md:text-2xl text-white font-light max-w-3xl mx-auto leading-relaxed"
+              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.3)' }}
+            >
               עיצוב מקורי, מיוצר בישראל, מגיע אליכם עם אהבה
             </p>
           </div>

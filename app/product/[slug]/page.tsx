@@ -6,6 +6,7 @@ import { formatPrice } from '@/lib/formatPrice';
 import ImageGallery from '@/components/ImageGallery';
 import ProductCard from '@/components/ProductCard';
 import AddToCartSection from '@/components/AddToCartSection';
+import { ChevronRight, Home, Check, Truck, Shield, AlertCircle } from 'lucide-react';
 
 interface PageProps {
   params: { slug: string };
@@ -25,135 +26,123 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <div 
-      className="animate-fadeIn min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+      className="animate-fadeIn min-h-screen bg-cover bg-center bg-no-repeat bg-fixed font-fredoka"
       style={{ backgroundImage: "url('/Product.png')" }}
     >
-      {/* Overlay for better text readability */}
-      <div className="bg-white/85 min-h-screen">
-        <div className="container mx-auto px-4 py-8">
-          {/* Breadcrumbs */}
-          <nav className="mb-8 text-sm text-gray-600">
-        <Link href="/" className="hover:text-primary-pink">
-          בית
-        </Link>
-        {' > '}
-        <Link href="/shop" className="hover:text-primary-pink">
-          חנות
-        </Link>
-        {' > '}
-        <Link
-          href={`/shop?category=${product.category}`}
-          className="hover:text-primary-pink"
-        >
-          {categoryNames[product.category]}
-        </Link>
-        {' > '}
-        <span className="text-base-black font-medium">{product.name}</span>
-      </nav>
-
-      {/* Product Details */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-        {/* Images */}
-        <div>
-          <ImageGallery images={product.images} productName={product.name} />
-        </div>
-
-        {/* Info */}
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold text-base-black mb-4">
-            {product.name}
-          </h1>
-
-          {/* Price - Fixed single price display */}
-          <div className="mb-6">
-            <span className="text-4xl font-bold text-base-black">
-              {formatPrice(product.price)}
-            </span>
-          </div>
-
-          {/* Description */}
-          <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            {product.description}
-          </p>
-
-          {/* Stock Status */}
-          <div className="mb-6">
-            {product.inStock ? (
-              <span className="text-primary-turquoise font-medium flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                במלאי
-              </span>
-            ) : (
-              <span className="text-red-600 font-medium">אזל מהמלאי</span>
-            )}
-          </div>
-
-          {/* Add to Cart Section (Client Component) */}
-          <AddToCartSection product={product} />
-
-          {/* Product Details */}
-          <div className="bg-base-white/80 rounded-lg p-6 space-y-4">
-            <h3 className="font-bold text-xl text-base-black mb-4">
-              פרטי המוצר
-            </h3>
-            {product.materials && (
-              <div className="flex gap-2">
-                <span className="font-semibold text-gray-700">חומרים:</span>
-                <span className="text-gray-600">{product.materials}</span>
-              </div>
-            )}
-            {product.size && (
-              <div className="flex gap-2">
-                <span className="font-semibold text-gray-700">גודל:</span>
-                <span className="text-gray-600">{product.size}</span>
-              </div>
-            )}
-            <div className="flex gap-2">
-              <span className="font-semibold text-gray-700">ייצור:</span>
-              <span className="text-gray-600">מיוצר בישראל 🇮🇱</span>
+      {/* Modern Glass Overlay */}
+      <div className="bg-white/80 backdrop-blur-md min-h-screen">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Images Section */}
+            <div className="relative">
+               <ImageGallery images={product.images} productName={product.name} />
             </div>
-            <div className="pt-4 border-t border-base-gray">
-              <p className="text-sm text-gray-600">
-                עיצוב מקורי, מוכן להזמנה (ללא התאמה אישית)
-              </p>
+
+            {/* Info Section */}
+            <div className="flex flex-col h-full">
+              <div className="mb-auto">
+                <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap pb-1 scrollbar-hide">
+                  <Link href="/" className="hover:text-primary-pink transition-colors">בית</Link>
+                  <span className="text-gray-300">/</span>
+                  <Link href="/shop" className="hover:text-primary-pink transition-colors">חנות</Link>
+                  <span className="text-gray-300">/</span>
+                  <Link href={`/shop?category=${product.category}`} className="hover:text-primary-pink transition-colors">
+                    {categoryNames[product.category]}
+                  </Link>
+                </nav>
+
+                <h1 className="text-4xl md:text-5xl font-black text-base-black leading-tight mb-4">
+                  {product.name}
+                </h1>
+                
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-4xl font-bold text-primary-pink">
+                    {formatPrice(product.price)}
+                  </span>
+                  {product.inStock ? (
+                    <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm font-bold border border-green-100">
+                      במלאי
+                    </span>
+                  ) : (
+                    <span className="bg-red-50 text-red-700 px-3 py-1 rounded-full text-sm font-bold border border-red-100">
+                      אזל מהמלאי
+                    </span>
+                  )}
+                  {product.featured && (
+                    <span className="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold border border-yellow-100">
+                      מומלץ
+                    </span>
+                  )}
+                </div>
+
+                <div className="prose prose-lg text-gray-600 mb-10 leading-relaxed max-w-none">
+                  <p>{product.description}</p>
+                </div>
+
+                {/* Features - Clean Look */}
+                <div className="flex flex-wrap gap-6 mb-10 border-y border-gray-100 py-6">
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-10 h-10 rounded-full bg-primary-pink/10 flex items-center justify-center text-primary-pink">
+                      <Shield size={20} />
+                    </div>
+                    <span className="font-medium">איכות מובטחת</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-10 h-10 rounded-full bg-primary-turquoise/10 flex items-center justify-center text-primary-turquoise">
+                      <Truck size={20} />
+                    </div>
+                    <span className="font-medium">משלוח מהיר</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-10 h-10 rounded-full bg-primary-mustard/10 flex items-center justify-center text-primary-mustard">
+                      <Check size={20} />
+                    </div>
+                    <span className="font-medium">ייצור ישראלי</span>
+                  </div>
+                </div>
+
+                {/* Product Specs */}
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10 text-sm">
+                  {product.materials && (
+                    <div className="flex flex-col">
+                      <span className="text-gray-500 mb-1">חומרים</span>
+                      <span className="font-bold text-gray-800">{product.materials}</span>
+                    </div>
+                  )}
+                  {product.size && (
+                    <div className="flex flex-col">
+                      <span className="text-gray-500 mb-1">גודל</span>
+                      <span className="font-bold text-gray-800">{product.size}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Actions */}
+              <AddToCartSection product={product} />
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Similar Products */}
-      {similarProducts.length > 0 && (
-        <section className="pb-16">
-          <h2 className="text-3xl font-bold text-base-black mb-8">
-            מוצרים דומים
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {similarProducts.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Back to Shop */}
-      <div className="text-center pb-8 lg:pb-0">
-        <Link href="/shop" className="inline-block">
-          <button className="px-6 py-3 rounded-lg border-2 border-primary-pink text-primary-pink hover:bg-primary-pink hover:text-white transition-all">
-            ← חזרה לחנות
-          </button>
-        </Link>
-      </div>
+          {/* Similar Products */}
+          {similarProducts.length > 0 && (
+            <section className="pb-16">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-3xl font-black text-base-black relative inline-block">
+                  מוצרים דומים
+                  <span className="absolute -bottom-2 left-0 w-full h-2 bg-primary-pink/20 -rotate-1 rounded-full"></span>
+                </h2>
+                <Link href="/shop" className="text-primary-turquoise font-bold hover:underline hidden sm:block">
+                  צפה בכל המוצרים
+                </Link>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {similarProducts.map((p) => (
+                  <ProductCard key={p.id} product={p} />
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>
@@ -165,4 +154,3 @@ export function generateStaticParams() {
     slug: product.slug,
   }));
 }
-
