@@ -30,6 +30,9 @@ const config: Config = {
         bounce: "bounce 0.6s ease-in-out",
         slideIn: "slideIn 0.3s ease-out",
         shimmer: "shimmer 2s linear infinite",
+        spray: "spray 0.6s ease-out forwards",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "gradient-xy": "gradient-xy 3s ease infinite",
       },
       keyframes: {
         fadeIn: {
@@ -47,6 +50,19 @@ const config: Config = {
         shimmer: {
           "0%": { backgroundPosition: "-1000px 0" },
           "100%": { backgroundPosition: "1000px 0" },
+        },
+        spray: {
+          "0%": { opacity: "0", transform: "scale(0.5) rotate(-10deg)" },
+          "50%": { opacity: "1", transform: "scale(1.1) rotate(2deg)" },
+          "100%": { opacity: "1", transform: "scale(1) rotate(0deg)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.3" },
+          "50%": { opacity: "0.6" },
+        },
+        "gradient-xy": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
     },
