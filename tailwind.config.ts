@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-heebo)', 'sans-serif'],
+        heebo: ['var(--font-heebo)', 'sans-serif'],
+        fredoka: ['var(--font-fredoka)', 'sans-serif'],
+      },
       colors: {
         primary: {
           pink: "#C04182",

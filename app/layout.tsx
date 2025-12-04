@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Heebo } from 'next/font/google';
+import { Heebo, Fredoka } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,6 +10,13 @@ const heebo = Heebo({
   weight: ['300', '400', '500', '700'],
   display: 'swap',
   variable: '--font-heebo',
+});
+
+const fredoka = Fredoka({
+  subsets: ['latin', 'hebrew'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-fredoka',
 });
 
 export const metadata: Metadata = {
@@ -100,7 +107,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${heebo.variable} font-sans antialiased`}>
+      <body className={`${heebo.variable} ${fredoka.variable} font-sans antialiased`}>
         <LoadingTransition />
         <div className="min-h-screen flex flex-col bg-base-white bg-[url('/bg/wood-light.jpg')] bg-fixed bg-cover">
           <div className="min-h-screen flex flex-col bg-gradient-to-b from-base-white/95 to-base-white/90">
