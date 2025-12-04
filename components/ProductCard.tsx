@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Product } from '@/types/product';
+import { Product, categoryNames } from '@/types/product';
 import { formatPrice } from '@/lib/formatPrice';
 import { ShoppingCart, Eye, Sparkles } from 'lucide-react';
 
@@ -75,10 +75,7 @@ export default function ProductCard({ product, onAddToCart, priority = false }: 
             </h3>
            </Link>
            <p className="text-xs text-gray-500 font-medium line-clamp-1">
-             {product.category === 'notebooks' ? 'מחברות מעוצבות' : 
-              product.category === 'greeting-cards' ? 'כרטיסי ברכה' :
-              product.category === 'envelopes' ? 'מעטפות מיוחדות' :
-              product.category === 'mugs' ? 'ספלים מעוצבים' : 'מוצרי נייר'}
+             {categoryNames[product.category]}
            </p>
         </div>
 
