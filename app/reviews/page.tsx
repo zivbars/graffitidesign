@@ -114,7 +114,7 @@ export default function ReviewsPage() {
 
             {/* Rating Distribution */}
             <div className="space-y-3">
-              {ratingDistribution.map(({ rating, count, percentage }) => (
+              {ratingDistribution.map(({ rating, percentage }) => (
                 <div key={rating} className="flex items-center gap-4 group">
                   <div className="w-12 font-bold text-gray-400 group-hover:text-primary-mustard transition-colors">
                     {rating} <span className="text-xs">★</span>

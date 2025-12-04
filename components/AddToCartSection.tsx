@@ -93,7 +93,7 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
         <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-lg border-t border-gray-200 p-4 shadow-2xl z-50 pb-safe">
           <div className="flex items-center gap-3 max-w-md mx-auto">
              <div className="flex flex-col">
-               <span className="text-xs text-gray-500 font-medium">סה"כ</span>
+               <span className="text-xs text-gray-500 font-medium">סה&quot;כ</span>
                <span className="text-lg font-black text-base-black">{formatPrice(product.price * quantity)}</span>
              </div>
             <button 

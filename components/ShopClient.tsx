@@ -9,7 +9,6 @@ import LoadingSkeleton from '@/components/LoadingSkeleton';
 import { useCart } from '@/stores/cart';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, SlidersHorizontal, X, Sparkles, Palette } from 'lucide-react';
-import { cn } from '@/lib/cn';
 
 type SortOption = 'newest' | 'price-low' | 'price-high' | 'popular';
 

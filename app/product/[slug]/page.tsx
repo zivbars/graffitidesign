@@ -6,7 +6,7 @@ import { formatPrice } from '@/lib/formatPrice';
 import ImageGallery from '@/components/ImageGallery';
 import ProductCard from '@/components/ProductCard';
 import AddToCartSection from '@/components/AddToCartSection';
-import { ChevronRight, Home, Check, Truck, Shield, AlertCircle } from 'lucide-react';
+import { Check, Truck, Shield } from 'lucide-react';
 
 interface PageProps {
   params: { slug: string };

@@ -60,7 +60,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-base-black mb-2">טלפון</h3>
-              <p className="text-gray-500 mb-4 text-sm">זמינים בימים א'-ה' בין 09:00-18:00</p>
+              <p className="text-gray-500 mb-4 text-sm">זמינים בימים א&apos;-ה&apos; בין 09:00-18:00</p>
               <a href="tel:+972505752939" className="text-lg font-bold text-primary-pink hover:underline ltr">
                 050-5752939
               </a>

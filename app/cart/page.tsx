@@ -28,11 +28,6 @@ export default function CartPage() {
     pickup: 0,
   };
 
-  const shippingLabels = {
-    standard: 'משלוח רגיל (3-5 ימים)',
-    pickup: 'איסוף עצמי',
-  };
-
   const subtotal = getTotalPrice();
   // Free shipping logic: if subtotal >= 200, shipping is free
   const isFreeShipping = subtotal >= 200;
