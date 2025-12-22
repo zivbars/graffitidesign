@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -10,29 +9,6 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const [isDevMode, setIsDevMode] = useState(true);
-
-  useEffect(() => {
-    // Check if we're in development mode
-    // In production, this should be blocked
-    const isDev = process.env.NODE_ENV === 'development';
-    setIsDevMode(isDev);
-  }, []);
-
-  // Block access in production
-  if (!isDevMode && process.env.NODE_ENV === 'production') {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="text-center p-8 bg-white rounded-lg shadow-lg">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">גישה חסומה</h1>
-          <p className="text-gray-600">ממשק האדמין זמין רק בסביבת פיתוח</p>
-          <Link href="/" className="mt-4 inline-block text-primary-pink hover:underline">
-            חזרה לאתר
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   const navItems = [
     { href: '/admin', label: 'דשבורד', icon: '📊' },
@@ -72,9 +48,6 @@ export default function AdminLayout({
             </div>
 
             <div className="flex items-center gap-4">
-              <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
-                מצב פיתוח
-              </span>
               <Link
                 href="/"
                 className="text-sm text-gray-600 hover:text-primary-pink transition-colors"
@@ -112,4 +85,3 @@ export default function AdminLayout({
     </div>
   );
 }
-
