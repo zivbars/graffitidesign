@@ -64,7 +64,7 @@ export default function BulkEditPage() {
       const res = await fetch('/api/products');
       const data: Product[] = await res.json();
       const allImages = data.flatMap(p => p.images);
-      setAvailableImages([...new Set(allImages)]);
+      setAvailableImages(Array.from(new Set(allImages)));
     }
   }
 
