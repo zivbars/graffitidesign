@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { products } from '@/data/products';
+import { fetchFeaturedProducts } from '@/lib/products';
 import { reviews } from '@/data/reviews';
 import ProductCard from '@/components/ProductCard';
 import ReviewCard from '@/components/ReviewCard';
@@ -16,9 +16,10 @@ export const metadata: Metadata = generateSEO({
   url: 'https://graffiti-designs.vercel.app',
 });
 
-export default function HomePage() {
-  const featuredProducts = products.filter((p) => p.featured).slice(0, 4);
-  const topReviews = reviews.filter((r) => r.rating === 5).slice(0, 3);
+export default async function HomePage() {
+  const allFeatured = await fetchFeaturedProducts();
+  const featuredProducts = allFeatured.slice(0, 4);
+  const topReviews = reviews.slice(0, 4);
 
   return (
     <div className="relative min-h-screen font-fredoka">

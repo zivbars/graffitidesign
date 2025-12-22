@@ -1,0 +1,115 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+  const [isDevMode, setIsDevMode] = useState(true);
+
+  useEffect(() => {
+    // Check if we're in development mode
+    // In production, this should be blocked
+    const isDev = process.env.NODE_ENV === 'development';
+    setIsDevMode(isDev);
+  }, []);
+
+  // Block access in production
+  if (!isDevMode && process.env.NODE_ENV === 'production') {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="text-center p-8 bg-white rounded-lg shadow-lg">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">גישה חסומה</h1>
+          <p className="text-gray-600">ממשק האדמין זמין רק בסביבת פיתוח</p>
+          <Link href="/" className="mt-4 inline-block text-primary-pink hover:underline">
+            חזרה לאתר
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const navItems = [
+    { href: '/admin', label: 'דשבורד', icon: '📊' },
+    { href: '/admin/products', label: 'מוצרים', icon: '📦' },
+    { href: '/admin/products/bulk', label: 'עריכה מרובה', icon: '✏️' },
+    { href: '/admin/products/new', label: 'מוצר חדש', icon: '➕' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50" dir="rtl">
+      {/* Top Navigation */}
+      <nav className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center gap-8">
+              <Link href="/admin" className="flex items-center gap-2">
+                <span className="text-2xl">⚙️</span>
+                <span className="font-bold text-xl text-gray-900">ניהול האתר</span>
+              </Link>
+              
+              <div className="hidden md:flex items-center gap-1">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      pathname === item.href
+                        ? 'bg-primary-turquoise text-white'
+                        : 'text-gray-600 hover:bg-gray-100'
+                    }`}
+                  >
+                    <span className="ml-1">{item.icon}</span>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
+                מצב פיתוח
+              </span>
+              <Link
+                href="/"
+                className="text-sm text-gray-600 hover:text-primary-pink transition-colors"
+              >
+                צפה באתר ←
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden bg-white border-b border-gray-200 px-4 py-2 overflow-x-auto">
+        <div className="flex gap-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                pathname === item.href
+                  ? 'bg-primary-turquoise text-white'
+                  : 'text-gray-600 bg-gray-100'
+              }`}
+            >
+              {item.icon} {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {children}
+      </main>
+    </div>
+  );
+}
+

@@ -4,13 +4,18 @@ import Link from 'next/link';
 import { categoryNames, Category } from '@/types/product';
 
 const categoryIcons: Record<Category, string> = {
-  envelopes: '✉️',
-  cards: '💌',
+  'a4-printables': '🖨️',
+  'greeting-cards': '💌',
+  'daily-planner': '📅',
+  'weekly-planner': '📆',
+  'envelopes-small': '✉️',
+  'envelopes-medium': '📧',
+  'envelopes-large': '📬',
+  'magnets': '🧲',
+  'spiral-notebooks': '📓',
+  'lined-notebooks': '📔',
   'recipe-books': '📖',
-  magnets: '🖼️',
-  planners: '📅',
-  printables: '🖨️',
-  notebooks: '📓',
+  'daily-journal': '📝',
   'shopping-lists': '🛒',
 };
 
@@ -31,7 +36,7 @@ export default function CategoryRibbon() {
         <div className="relative max-w-7xl mx-auto">
           {/* Mobile: Horizontal Scroll | Desktop: Grid */}
           <div className="overflow-x-auto md:overflow-visible scrollbar-hide pb-6 -mx-4 px-4 md:mx-0 md:px-0">
-            <div className="flex md:grid md:grid-cols-8 gap-4 md:gap-8 min-w-max md:min-w-0 justify-center">
+            <div className="flex md:grid md:grid-cols-7 lg:grid-cols-13 gap-4 md:gap-6 min-w-max md:min-w-0 justify-center">
               {categories.map(([key, label]) => (
                 <Link
                   key={key}
@@ -65,4 +70,3 @@ export default function CategoryRibbon() {
     </section>
   );
 }
-

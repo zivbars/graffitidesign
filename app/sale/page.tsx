@@ -1,15 +1,34 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { products } from '@/data/products';
+import { useState, useMemo, useEffect } from 'react';
+import { Product } from '@/types/product';
 import ProductCard from '@/components/ProductCard';
+import LoadingSkeleton from '@/components/LoadingSkeleton';
 import { useCart } from '@/stores/cart';
 import { formatPrice } from '@/lib/formatPrice';
 import Button from '@/components/Button';
 
 export default function SalePage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState<'discount' | 'price-low' | 'price-high'>('discount');
   const addToCart = useCart((state) => state.add);
+
+  // Fetch products
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Error loading products:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadProducts();
+  }, []);
 
   const saleProducts = useMemo(() => {
     const filtered = products.filter((p) => p.isOnSale);
@@ -34,7 +53,7 @@ export default function SalePage() {
           return 0;
       }
     });
-  }, [sortBy]);
+  }, [sortBy, products]);
 
   const handleAddToCart = (productId: string) => {
     const product = products.find((p) => p.id === productId);
@@ -123,7 +142,11 @@ export default function SalePage() {
         )}
 
         {/* Products Grid */}
-        {saleProducts.length === 0 ? (
+        {isLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[...Array(4)].map((_, i) => <LoadingSkeleton key={`skeleton-${i}`} />)}
+          </div>
+        ) : saleProducts.length === 0 ? (
           <div className="text-center py-24 bg-white rounded-3xl shadow-sm border border-gray-100">
             <div className="text-8xl mb-6 animate-pulse">🛍️</div>
             <h2 className="text-3xl font-bold text-base-black mb-4 font-fredoka">

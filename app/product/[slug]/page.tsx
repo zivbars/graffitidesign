@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { products } from '@/data/products';
+import { fetchProductBySlug, fetchProductsByCategory, getAllProductSlugs } from '@/lib/products';
 import { categoryNames } from '@/types/product';
 import { formatPrice } from '@/lib/formatPrice';
 import ImageGallery from '@/components/ImageGallery';
@@ -14,14 +14,15 @@ interface PageProps {
 
 export default async function ProductPage({ params }: PageProps) {
   const { slug } = params;
-  const product = products.find((p) => p.slug === slug);
+  const product = await fetchProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const similarProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
+  const categoryProducts = await fetchProductsByCategory(product.category);
+  const similarProducts = categoryProducts
+    .filter((p) => p.id !== product.id)
     .slice(0, 4);
 
   return (
@@ -149,8 +150,9 @@ export default async function ProductPage({ params }: PageProps) {
   );
 }
 
-export function generateStaticParams() {
-  return products.map((product) => ({
-    slug: product.slug,
+export async function generateStaticParams() {
+  const slugs = await getAllProductSlugs();
+  return slugs.map((slug) => ({
+    slug,
   }));
 }

@@ -1,12 +1,17 @@
 export type Category = 
-  | 'envelopes'
-  | 'cards'
-  | 'recipe-books'
-  | 'magnets'
-  | 'planners'
-  | 'printables'
-  | 'notebooks'
-  | 'shopping-lists';
+  | 'a4-printables'           // דפי A4 להדפסה
+  | 'greeting-cards'          // כרטיסי ברכה
+  | 'daily-planner'           // לוח תכנון יומי
+  | 'weekly-planner'          // לוח תכנון שבועי
+  | 'envelopes-small'         // מארז קטן מעטפות ואיגרות
+  | 'envelopes-medium'        // מארזי מעטפות בינוני
+  | 'envelopes-large'         // מארזי מעטפות גדולות
+  | 'magnets'                 // מגנטים
+  | 'spiral-notebooks'        // מחברות ספירלה
+  | 'lined-notebooks'         // מחברות שורות
+  | 'recipe-books'            // ספר מתכונים
+  | 'daily-journal'           // פנקס יומן
+  | 'shopping-lists';         // רשימת קניות
 
 export interface Product {
   id: string;
@@ -25,13 +30,17 @@ export interface Product {
 }
 
 export const categoryNames: Record<Category, string> = {
-  envelopes: 'מעטפות ואיגרות',
-  cards: 'כרטיסי ברכה',
+  'a4-printables': 'דפי A4 להדפסה',
+  'greeting-cards': 'כרטיסי ברכה',
+  'daily-planner': 'לוח תכנון יומי',
+  'weekly-planner': 'לוח תכנון שבועי',
+  'envelopes-small': 'מארז קטן מעטפות ואיגרות',
+  'envelopes-medium': 'מארזי מעטפות בינוני',
+  'envelopes-large': 'מארזי מעטפות גדולות',
+  'magnets': 'מגנטים',
+  'spiral-notebooks': 'מחברות ספירלה',
+  'lined-notebooks': 'מחברות שורות',
   'recipe-books': 'ספרי מתכונים',
-  magnets: 'מגנטים',
-  planners: 'לוחות תכנון',
-  printables: 'דפי הדפסה',
-  notebooks: 'מחברות',
+  'daily-journal': 'פנקס יומן',
   'shopping-lists': 'רשימות קניות',
 };
-
