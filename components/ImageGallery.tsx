@@ -15,8 +15,8 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
 
   return (
     <div className="space-y-4 select-none sticky top-24">
-      {/* Main Image */}
-      <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-white shadow-sm border border-gray-100 group">
+      {/* Main Image - Vertical aspect ratio for product images */}
+      <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden bg-gray-50 shadow-sm border border-gray-100 group">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedImage}
@@ -32,7 +32,8 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
               fill
               priority
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-contain transition-transform duration-700 group-hover:scale-105"
+              style={{ objectPosition: 'center center' }}
             />
           </motion.div>
         </AnimatePresence>
@@ -43,25 +44,26 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
         </div>
       </div>
 
-      {/* Thumbnails */}
+      {/* Thumbnails - Vertical aspect ratio */}
       {images.length > 1 && (
         <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide justify-center">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className={`relative flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden snap-start transition-all duration-300 border-2 ${
+              className={`relative flex-shrink-0 w-16 h-20 rounded-2xl overflow-hidden snap-start transition-all duration-300 border-2 bg-gray-50 ${
                 selectedImage === index
                   ? 'border-primary-pink scale-95 shadow-md'
-                  : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105 bg-white'
+                  : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105'
               }`}
             >
               <Image
                 src={image}
                 alt={`${productName} - תמונה ממוזערת ${index + 1}`}
                 fill
-                sizes="80px"
-                className="object-cover"
+                sizes="64px"
+                className="object-contain"
+                style={{ objectPosition: 'center center' }}
               />
             </button>
           ))}

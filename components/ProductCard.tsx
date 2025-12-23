@@ -31,8 +31,8 @@ export default function ProductCard({ product, onAddToCart, priority = false }: 
 
   return (
     <div className="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-100 overflow-hidden hover:-translate-y-1">
-      {/* Image Container */}
-      <div className="relative block aspect-square overflow-hidden bg-gray-50">
+      {/* Image Container - Vertical aspect ratio for product images */}
+      <div className="relative block aspect-[3/4] overflow-hidden bg-gray-50">
         <Link href={`/product/${product.slug}`} className="absolute inset-0 cursor-pointer z-0">
           {product.featured && (
             <span className="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-pink shadow-sm flex items-center gap-1">
@@ -53,7 +53,7 @@ export default function ProductCard({ product, onAddToCart, priority = false }: 
             fill
             priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-contain transition-transform duration-500 group-hover:scale-105"
             style={{ objectPosition: 'center center' }}
           />
         </Link>
