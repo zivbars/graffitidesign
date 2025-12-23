@@ -39,10 +39,10 @@ export default async function ProductPage({ params }: PageProps) {
                <ImageGallery images={product.images} productName={product.name} />
             </div>
 
-            {/* Info Section */}
-            <div className="flex flex-col h-full">
+            {/* Info Section - All centered */}
+            <div className="flex flex-col h-full text-center">
               <div className="mb-auto">
-                <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap pb-1 scrollbar-hide">
+                <nav className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-6 overflow-x-auto whitespace-nowrap pb-1 scrollbar-hide">
                   <Link href="/" className="hover:text-primary-pink transition-colors">בית</Link>
                   <span className="text-gray-300">/</span>
                   <Link href="/shop" className="hover:text-primary-pink transition-colors">חנות</Link>
@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: PageProps) {
                   {product.name}
                 </h1>
                 
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center justify-center gap-4 mb-8 -translate-x-8">
                   <span className="text-4xl font-bold text-primary-pink">
                     {formatPrice(product.price)}
                   </span>
@@ -76,12 +76,12 @@ export default async function ProductPage({ params }: PageProps) {
                   )}
                 </div>
 
-                <div className="prose prose-lg text-gray-600 mb-10 leading-relaxed max-w-none">
+                <div className="prose prose-lg text-gray-600 mb-10 leading-relaxed max-w-none mx-auto">
                   <p>{product.description}</p>
                 </div>
 
-                {/* Features - Clean Look */}
-                <div className="flex flex-wrap gap-6 mb-10 border-y border-gray-100 py-6">
+                {/* Features - Clean Look, Centered */}
+                <div className="flex flex-wrap justify-center gap-6 mb-10 border-y border-gray-100 py-6">
                   <div className="flex items-center gap-3 text-gray-700">
                     <div className="w-10 h-10 rounded-full bg-primary-pink/10 flex items-center justify-center text-primary-pink">
                       <Shield size={20} />
@@ -102,25 +102,27 @@ export default async function ProductPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                {/* Product Specs */}
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10 text-sm">
+                {/* Product Specs - Centered */}
+                <div className="flex justify-center gap-24 text-sm">
                   {product.materials && (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col items-center text-center">
                       <span className="text-gray-500 mb-1">חומרים</span>
                       <span className="font-bold text-gray-800">{product.materials}</span>
                     </div>
                   )}
                   {product.size && (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col items-center text-center">
                       <span className="text-gray-500 mb-1">גודל</span>
                       <span className="font-bold text-gray-800">{product.size}</span>
                     </div>
                   )}
                 </div>
-              </div>
 
-              {/* Actions */}
-              <AddToCartSection product={product} />
+                {/* Actions - 2cm below specs, centered */}
+                <div className="mt-8">
+                  <AddToCartSection product={product} />
+                </div>
+              </div>
             </div>
           </div>
 

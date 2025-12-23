@@ -23,9 +23,9 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
   };
 
   return (
-    <div className="space-y-4 select-none sticky top-24">
-      {/* Main Image - Vertical aspect ratio for product images */}
-      <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden bg-gray-50 shadow-sm border border-gray-100 group">
+    <div className="space-y-3 select-none sticky top-24">
+      {/* Main Image - Smaller vertical aspect ratio to fit viewport */}
+      <div className="relative w-full max-h-[65vh] aspect-[4/5] rounded-3xl overflow-hidden bg-gray-50 shadow-sm border border-gray-100 group">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedImage}

@@ -31,7 +31,7 @@ export const products: Product[] = [
     size: 'A4 (21 x 29.7 ס"מ)',
   },
 
-  // כרטיסי ברכה (Greeting Cards)
+  // כרטיסי ברכה (Greeting Cards) - 14 כרטיסים A-N
   {
     id: 'card-1',
     slug: 'greeting-card-elegant',
@@ -40,7 +40,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/A2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/A.png'],
     inStock: true,
     featured: true,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -54,7 +54,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/B2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -68,7 +68,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/C2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/C.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -82,7 +82,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/D2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/D.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -96,7 +96,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/E2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/E.png'],
     inStock: true,
     featured: true,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -110,7 +110,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/F2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/F.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -124,7 +124,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/G2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/G.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -138,7 +138,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/H2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/H.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -152,7 +152,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/I2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/I.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -166,7 +166,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/J2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/J.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -180,7 +180,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/K2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/K.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -194,7 +194,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/L2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/L.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -208,7 +208,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/M2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/M.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -222,14 +222,14 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/N2.png'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/N.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
     size: '15 x 20 ס"מ',
   },
 
-  // לוח תכנון יומי (Daily Planner)
+  // לוח תכנון יומי (Daily Planner) - 3 לוחות A-C
   {
     id: 'daily-planner-1',
     slug: 'daily-planner-floral',
@@ -238,7 +238,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/A2.png'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/A.png'],
     inStock: true,
     featured: true,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -252,7 +252,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/B2.png'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -266,14 +266,14 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/C2.png'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/C.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
     size: 'A4 (21 x 29.7 ס"מ)',
   },
 
-  // לוח תכנון שבועי (Weekly Planner)
+  // לוח תכנון שבועי (Weekly Planner) - 2 לוחות A.jpeg, B.png
   {
     id: 'weekly-planner-1',
     slug: 'weekly-planner-elegant',
@@ -282,7 +282,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'weekly-planner',
-    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/A2.webp'],
+    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/A.jpeg'],
     inStock: true,
     featured: true,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -296,14 +296,14 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'weekly-planner',
-    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/B2.png'],
+    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
     size: 'A4 (21 x 29.7 ס"מ)',
   },
 
-  // מארז קטן מעטפות ואיגרות (Small Envelope Set)
+  // מארז קטן מעטפות ואיגרות (Small Envelope Set) - 5 מארזים A-E עם תמונה שנייה
   {
     id: 'env-small-1',
     slug: 'envelope-small-floral',
@@ -313,7 +313,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/A.png',
       '/products/גרפיטי/מארז מעטפות קטן ערוך/A2.png'
     ],
     inStock: true,
@@ -330,7 +330,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/B.png',
       '/products/גרפיטי/מארז מעטפות קטן ערוך/B2.png'
     ],
     inStock: true,
@@ -347,7 +347,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/C.png',
       '/products/גרפיטי/מארז מעטפות קטן ערוך/C2.png'
     ],
     inStock: true,
@@ -364,7 +364,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/D.png',
       '/products/גרפיטי/מארז מעטפות קטן ערוך/D2.png'
     ],
     inStock: true,
@@ -381,7 +381,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/E.png',
       '/products/גרפיטי/מארז מעטפות קטן ערוך/E2.png'
     ],
     inStock: true,
@@ -390,7 +390,7 @@ export const products: Product[] = [
     size: '12 x 17 ס"מ',
   },
 
-  // מארז בינוני מעטפות ואיגרות (Medium Envelope Set)
+  // מארז בינוני מעטפות ואיגרות (Medium Envelope Set) - 5 מארזים A-E עם תמונה שנייה
   {
     id: 'env-medium-1',
     slug: 'envelope-medium-floral',
@@ -400,8 +400,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/F.png',
-      '/products/גרפיטי/מארז מעטפות קטן ערוך/F2.png'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A.png',
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -417,8 +417,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/G.png',
-      '/products/גרפיטי/מארז מעטפות קטן ערוך/G2.png'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B.png',
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -434,8 +434,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/H.png',
-      '/products/גרפיטי/מארז מעטפות קטן ערוך/H2.png'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C.png',
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -451,8 +451,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/I.png',
-      '/products/גרפיטי/מארז מעטפות קטן ערוך/I2.png'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D.png',
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -468,8 +468,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/J.png',
-      '/products/גרפיטי/מארז מעטפות קטן ערוך/J2.png'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E.png',
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E2.png'
     ],
     inStock: true,
     featured: false,
@@ -477,7 +477,7 @@ export const products: Product[] = [
     size: '16 x 23 ס"מ',
   },
 
-  // מארז גדול מעטפות ואיגרות (Large Envelope Set)
+  // מארז גדול מעטפות ואיגרות (Large Envelope Set) - 5 מארזים A-E עם תמונה שנייה
   {
     id: 'env-large-1',
     slug: 'envelope-large-floral',
@@ -487,7 +487,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/A.png',
       '/products/גרפיטי/מארז מעטפות גדול ערוך/A2.png'
     ],
     inStock: true,
@@ -504,7 +504,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/B.png',
       '/products/גרפיטי/מארז מעטפות גדול ערוך/B2.png'
     ],
     inStock: true,
@@ -521,7 +521,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/C.png',
       '/products/גרפיטי/מארז מעטפות גדול ערוך/C2.png'
     ],
     inStock: true,
@@ -538,7 +538,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/D.png',
       '/products/גרפיטי/מארז מעטפות גדול ערוך/D2.png'
     ],
     inStock: true,
@@ -555,7 +555,7 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/E.png',
       '/products/גרפיטי/מארז מעטפות גדול ערוך/E2.png'
     ],
     inStock: true,
@@ -564,7 +564,7 @@ export const products: Product[] = [
     size: '20 x 28 ס"מ',
   },
 
-  // מגנטים (Magnets)
+  // מגנטים (Magnets) - 6 סטים A-F
   {
     id: 'magnet-1',
     slug: 'magnet-inspirational',
@@ -650,7 +650,7 @@ export const products: Product[] = [
     size: '5 x 7 ס"מ כל אחד',
   },
 
-  // מחברות ספירלה (Spiral Notebooks)
+  // מחברות ספירלה (Spiral Notebooks) - 4 מחברות A-D עם תמונה שנייה
   {
     id: 'spiral-1',
     slug: 'spiral-notebook-floral',
@@ -720,7 +720,7 @@ export const products: Product[] = [
     size: 'A5 (14.8 x 21 ס"מ)',
   },
 
-  // מחברות שורות (Lined Notebooks)
+  // מחברות שורות (Lined Notebooks) - 8 מחברות A-H עם תמונה שנייה
   {
     id: 'lined-1',
     slug: 'lined-notebook-floral',
@@ -858,7 +858,7 @@ export const products: Product[] = [
     size: 'A5 (14.8 x 21 ס"מ)',
   },
 
-  // ספרי מתכונים (Recipe Books)
+  // ספרי מתכונים (Recipe Books) - 4 ספרים A-D עם תמונה שנייה
   {
     id: 'recipe-1',
     slug: 'recipe-book-family',
@@ -928,7 +928,7 @@ export const products: Product[] = [
     size: 'A4 (21 x 29.7 ס"מ)',
   },
 
-  // פנקס יומן (Daily Journal)
+  // פנקס יומן (Daily Journal) - 7 פנקסים A-G עם תמונה שנייה
   {
     id: 'journal-1',
     slug: 'daily-journal-floral',
@@ -1049,7 +1049,7 @@ export const products: Product[] = [
     size: 'A5 (14.8 x 21 ס"מ)',
   },
 
-  // רשימות קניות (Shopping Lists)
+  // רשימות קניות (Shopping Lists) - 5 רשימות A-E
   {
     id: 'shopping-1',
     slug: 'shopping-list-floral',

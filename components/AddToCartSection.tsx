@@ -32,8 +32,8 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
 
   return (
     <>
-      {/* Desktop Actions - Centered and positioned higher */}
-      <div className="flex flex-col items-center justify-center py-8 -mt-4">
+      {/* Desktop Actions - Centered, positioned below specs */}
+      <div className="flex flex-col items-center justify-center">
         {product.inStock && (
           <div className="flex flex-col items-center gap-4 w-full max-w-xs">
             {/* Quantity Selector - Above Add to Cart */}
