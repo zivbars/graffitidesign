@@ -10,7 +10,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'a4-printables',
-    images: ['/products/new/a4-printables/design-2-1.webp'],
+    images: ['/products/גרפיטי/דפי A4 ערוך/A.png'],
     inStock: true,
     featured: true,
     materials: 'קובץ דיגיטלי להדפסה',
@@ -24,10 +24,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'a4-printables',
-    images: [
-      '/products/new/a4-printables/design-3-1.webp',
-      '/products/new/a4-printables/design-3-2.webp'
-    ],
+    images: ['/products/גרפיטי/דפי A4 ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'קובץ דיגיטלי להדפסה',
@@ -43,7 +40,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/A.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/A2.png'],
     inStock: true,
     featured: true,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -57,7 +54,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/B.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/B2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -71,7 +68,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/C.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/C2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -85,7 +82,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/D.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/D2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -99,7 +96,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/E.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/E2.png'],
     inStock: true,
     featured: true,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -113,7 +110,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/F.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/F2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -127,7 +124,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/G.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/G2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -141,7 +138,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/H.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/H2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -155,7 +152,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/I.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/I2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -169,7 +166,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/J.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/J2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -183,7 +180,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/K.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/K2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -197,7 +194,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/L.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/L2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -211,7 +208,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/M.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/M2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -225,7 +222,7 @@ export const products: Product[] = [
     price: 5.00,
     isOnSale: false,
     category: 'greeting-cards',
-    images: ['/products/new/greeting-cards/N.webp'],
+    images: ['/products/גרפיטי/כרטיסי ברכה ערוך/N2.png'],
     inStock: true,
     featured: false,
     materials: 'קרטון 300 גרם, ציפוי מט',
@@ -241,7 +238,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/new/daily-planner/A.webp'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/A2.png'],
     inStock: true,
     featured: true,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -255,7 +252,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/new/daily-planner/B.webp'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/B2.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -269,7 +266,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'daily-planner',
-    images: ['/products/new/daily-planner/C.webp'],
+    images: ['/products/גרפיטי/לוח תכנון יומי ערוך/C2.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -285,7 +282,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'weekly-planner',
-    images: ['/products/new/weekly-planner/A.webp'],
+    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/A2.webp'],
     inStock: true,
     featured: true,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -299,7 +296,7 @@ export const products: Product[] = [
     price: 14.90,
     isOnSale: false,
     category: 'weekly-planner',
-    images: ['/products/new/weekly-planner/B.webp'],
+    images: ['/products/גרפיטי/לוח תכנון שבועי ערוך/B2.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, בסיס קרטון',
@@ -316,8 +313,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/new/envelopes-small/A1.webp',
-      '/products/new/envelopes-small/A2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -333,8 +330,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/new/envelopes-small/B1.webp',
-      '/products/new/envelopes-small/B2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -350,8 +347,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/new/envelopes-small/C1.webp',
-      '/products/new/envelopes-small/C2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -367,8 +364,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/new/envelopes-small/D1.webp',
-      '/products/new/envelopes-small/D2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -384,8 +381,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-small',
     images: [
-      '/products/new/envelopes-small/E1.webp',
-      '/products/new/envelopes-small/E2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/E2.png'
     ],
     inStock: true,
     featured: false,
@@ -403,8 +400,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/new/envelopes-medium/A1.webp',
-      '/products/new/envelopes-medium/A2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/F.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/F2.png'
     ],
     inStock: true,
     featured: true,
@@ -420,8 +417,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/new/envelopes-medium/B1.webp',
-      '/products/new/envelopes-medium/B2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/G.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/G2.png'
     ],
     inStock: true,
     featured: false,
@@ -437,8 +434,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/new/envelopes-medium/C1.webp',
-      '/products/new/envelopes-medium/C2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/H.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/H2.png'
     ],
     inStock: true,
     featured: false,
@@ -454,8 +451,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/new/envelopes-medium/D1.webp',
-      '/products/new/envelopes-medium/D2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/I.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/I2.png'
     ],
     inStock: true,
     featured: false,
@@ -471,8 +468,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-medium',
     images: [
-      '/products/new/envelopes-medium/E1.webp',
-      '/products/new/envelopes-medium/E2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/J.png',
+      '/products/גרפיטי/מארז מעטפות קטן ערוך/J2.png'
     ],
     inStock: true,
     featured: false,
@@ -490,8 +487,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/new/envelopes-large/A1.webp',
-      '/products/new/envelopes-large/A2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/A.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -507,8 +504,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/new/envelopes-large/B1.webp',
-      '/products/new/envelopes-large/B2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/B.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -524,8 +521,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/new/envelopes-large/C1.webp',
-      '/products/new/envelopes-large/C2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/C.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -541,8 +538,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/new/envelopes-large/D1.webp',
-      '/products/new/envelopes-large/D2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/D.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -558,8 +555,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'envelopes-large',
     images: [
-      '/products/new/envelopes-large/E1.webp',
-      '/products/new/envelopes-large/E2.webp'
+      '/products/גרפיטי/מארז מעטפות בינוני ערוך/E.png',
+      '/products/גרפיטי/מארז מעטפות גדול ערוך/E2.png'
     ],
     inStock: true,
     featured: false,
@@ -576,7 +573,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/A.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/A.png'],
     inStock: true,
     featured: true,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -590,7 +587,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/B.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -604,7 +601,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/C.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/C.png'],
     inStock: true,
     featured: false,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -618,7 +615,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/D.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/D.png'],
     inStock: true,
     featured: false,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -632,7 +629,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/E.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/E.png'],
     inStock: true,
     featured: true,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -646,7 +643,7 @@ export const products: Product[] = [
     price: 11.90,
     isOnSale: false,
     category: 'magnets',
-    images: ['/products/new/magnets/F.webp'],
+    images: ['/products/גרפיטי/מגנטים ערוך/F.png'],
     inStock: true,
     featured: false,
     materials: 'מגנט גמיש, הדפסה איכותית',
@@ -663,8 +660,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'spiral-notebooks',
     images: [
-      '/products/new/spiral-notebooks/A1.webp',
-      '/products/new/spiral-notebooks/A2.webp'
+      '/products/גרפיטי/מחברות ספירלה ערוך/A.png',
+      '/products/גרפיטי/מחברות ספירלה ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -680,8 +677,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'spiral-notebooks',
     images: [
-      '/products/new/spiral-notebooks/B1.webp',
-      '/products/new/spiral-notebooks/B2.webp'
+      '/products/גרפיטי/מחברות ספירלה ערוך/B.png',
+      '/products/גרפיטי/מחברות ספירלה ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -697,8 +694,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'spiral-notebooks',
     images: [
-      '/products/new/spiral-notebooks/C1.webp',
-      '/products/new/spiral-notebooks/C2.webp'
+      '/products/גרפיטי/מחברות ספירלה ערוך/C.png',
+      '/products/גרפיטי/מחברות ספירלה ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -714,8 +711,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'spiral-notebooks',
     images: [
-      '/products/new/spiral-notebooks/D1.webp',
-      '/products/new/spiral-notebooks/D2.webp'
+      '/products/גרפיטי/מחברות ספירלה ערוך/D.png',
+      '/products/גרפיטי/מחברות ספירלה ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -733,8 +730,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/A1.webp',
-      '/products/new/lined-notebooks/A2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/A.png',
+      '/products/גרפיטי/מחברת שורות ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -750,8 +747,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/B1.webp',
-      '/products/new/lined-notebooks/B2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/B.png',
+      '/products/גרפיטי/מחברת שורות ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -767,8 +764,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/C1.webp',
-      '/products/new/lined-notebooks/C2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/C.png',
+      '/products/גרפיטי/מחברת שורות ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -784,8 +781,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/D1.webp',
-      '/products/new/lined-notebooks/D2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/D.png',
+      '/products/גרפיטי/מחברת שורות ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -801,8 +798,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/E1.webp',
-      '/products/new/lined-notebooks/E2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/E.png',
+      '/products/גרפיטי/מחברת שורות ערוך/E2.png'
     ],
     inStock: true,
     featured: true,
@@ -818,8 +815,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/F1.webp',
-      '/products/new/lined-notebooks/F2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/F.png',
+      '/products/גרפיטי/מחברת שורות ערוך/F2.png'
     ],
     inStock: true,
     featured: false,
@@ -835,8 +832,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/G1.webp',
-      '/products/new/lined-notebooks/G2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/G.png',
+      '/products/גרפיטי/מחברת שורות ערוך/G2.png'
     ],
     inStock: true,
     featured: false,
@@ -852,8 +849,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'lined-notebooks',
     images: [
-      '/products/new/lined-notebooks/H1.webp',
-      '/products/new/lined-notebooks/H2.webp'
+      '/products/גרפיטי/מחברת שורות ערוך/H.png',
+      '/products/גרפיטי/מחברת שורות ערוך/H2.png'
     ],
     inStock: true,
     featured: false,
@@ -871,8 +868,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'recipe-books',
     images: [
-      '/products/new/recipe-books/A1.webp',
-      '/products/new/recipe-books/A2.webp'
+      '/products/גרפיטי/ספר מתכונים ערוך/A.png',
+      '/products/גרפיטי/ספר מתכונים ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -888,8 +885,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'recipe-books',
     images: [
-      '/products/new/recipe-books/B1.webp',
-      '/products/new/recipe-books/B2.webp'
+      '/products/גרפיטי/ספר מתכונים ערוך/B.png',
+      '/products/גרפיטי/ספר מתכונים ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -905,8 +902,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'recipe-books',
     images: [
-      '/products/new/recipe-books/C1.webp',
-      '/products/new/recipe-books/C2.webp'
+      '/products/גרפיטי/ספר מתכונים ערוך/C.png',
+      '/products/גרפיטי/ספר מתכונים ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -922,8 +919,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'recipe-books',
     images: [
-      '/products/new/recipe-books/D1.webp',
-      '/products/new/recipe-books/D2.webp'
+      '/products/גרפיטי/ספר מתכונים ערוך/D.png',
+      '/products/גרפיטי/ספר מתכונים ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -941,8 +938,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/A1.webp',
-      '/products/new/daily-journal/A2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/A.png',
+      '/products/גרפיטי/פנקס יומן ערוך/A2.png'
     ],
     inStock: true,
     featured: true,
@@ -958,8 +955,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/B1.webp',
-      '/products/new/daily-journal/B2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/B.png',
+      '/products/גרפיטי/פנקס יומן ערוך/B2.png'
     ],
     inStock: true,
     featured: false,
@@ -975,8 +972,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/C1.webp',
-      '/products/new/daily-journal/C2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/C.png',
+      '/products/גרפיטי/פנקס יומן ערוך/C2.png'
     ],
     inStock: true,
     featured: false,
@@ -992,8 +989,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/D1.webp',
-      '/products/new/daily-journal/D2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/D.png',
+      '/products/גרפיטי/פנקס יומן ערוך/D2.png'
     ],
     inStock: true,
     featured: false,
@@ -1009,8 +1006,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/E1.webp',
-      '/products/new/daily-journal/E2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/E.png',
+      '/products/גרפיטי/פנקס יומן ערוך/E2.png'
     ],
     inStock: true,
     featured: true,
@@ -1026,8 +1023,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/F1.webp',
-      '/products/new/daily-journal/F2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/F.png',
+      '/products/גרפיטי/פנקס יומן ערוך/F2.png'
     ],
     inStock: true,
     featured: false,
@@ -1043,8 +1040,8 @@ export const products: Product[] = [
     isOnSale: false,
     category: 'daily-journal',
     images: [
-      '/products/new/daily-journal/G1.webp',
-      '/products/new/daily-journal/G2.webp'
+      '/products/גרפיטי/פנקס יומן ערוך/G.png',
+      '/products/גרפיטי/פנקס יומן ערוך/G2.png'
     ],
     inStock: true,
     featured: false,
@@ -1061,7 +1058,7 @@ export const products: Product[] = [
     price: 9.90,
     isOnSale: false,
     category: 'shopping-lists',
-    images: ['/products/new/shopping-lists/A.webp'],
+    images: ['/products/גרפיטי/רשימת קניות ערוך/A.png'],
     inStock: true,
     featured: true,
     materials: 'נייר 120 גרם, מגנט',
@@ -1075,7 +1072,7 @@ export const products: Product[] = [
     price: 9.90,
     isOnSale: false,
     category: 'shopping-lists',
-    images: ['/products/new/shopping-lists/B.webp'],
+    images: ['/products/גרפיטי/רשימת קניות ערוך/B.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, מגנט',
@@ -1089,7 +1086,7 @@ export const products: Product[] = [
     price: 9.90,
     isOnSale: false,
     category: 'shopping-lists',
-    images: ['/products/new/shopping-lists/C.webp'],
+    images: ['/products/גרפיטי/רשימת קניות ערוך/C.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, מגנט',
@@ -1103,7 +1100,7 @@ export const products: Product[] = [
     price: 9.90,
     isOnSale: false,
     category: 'shopping-lists',
-    images: ['/products/new/shopping-lists/D.webp'],
+    images: ['/products/גרפיטי/רשימת קניות ערוך/D.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, מגנט',
@@ -1117,7 +1114,7 @@ export const products: Product[] = [
     price: 9.90,
     isOnSale: false,
     category: 'shopping-lists',
-    images: ['/products/new/shopping-lists/E.webp'],
+    images: ['/products/גרפיטי/רשימת קניות ערוך/E.png'],
     inStock: true,
     featured: false,
     materials: 'נייר 120 גרם, מגנט',
