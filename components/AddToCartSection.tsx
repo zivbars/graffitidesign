@@ -32,35 +32,35 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
 
   return (
     <>
-      {/* Desktop Actions */}
-      <div className="mt-4">
+      {/* Desktop Actions - Centered and positioned higher */}
+      <div className="flex flex-col items-center justify-center py-8 -mt-4">
         {product.inStock && (
-          <div className="flex flex-col sm:flex-row gap-4 mb-4">
-            {/* Quantity Selector */}
-            <div className="flex items-center bg-white border border-gray-200 rounded-xl px-1 h-14 w-full sm:w-auto justify-between sm:justify-start min-w-[140px]">
+          <div className="flex flex-col items-center gap-4 w-full max-w-xs">
+            {/* Quantity Selector - Above Add to Cart */}
+            <div className="flex items-center bg-white border border-gray-200 rounded-xl px-2 h-14 w-full justify-between shadow-sm">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-primary-pink transition-colors"
+                className="w-12 h-full flex items-center justify-center text-gray-500 hover:text-primary-pink transition-colors rounded-lg hover:bg-gray-50"
                 disabled={quantity <= 1}
               >
-                <Minus size={18} />
+                <Minus size={20} />
               </button>
-              <span className="font-bold text-xl text-base-black w-8 text-center">
+              <span className="font-bold text-2xl text-base-black w-12 text-center">
                 {quantity}
               </span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-primary-pink transition-colors"
+                className="w-12 h-full flex items-center justify-center text-gray-500 hover:text-primary-pink transition-colors rounded-lg hover:bg-gray-50"
               >
-                <Plus size={18} />
+                <Plus size={20} />
               </button>
             </div>
 
-            {/* Add Button */}
+            {/* Add Button - Below Quantity */}
             <button
               onClick={handleAddToCart}
               disabled={!product.inStock}
-              className="flex-1 h-14 bg-primary-pink text-white rounded-xl font-bold text-lg shadow-md hover:bg-primary-pink/90 hover:shadow-lg transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 px-8 whitespace-nowrap"
+              className="w-full h-14 bg-primary-pink text-white rounded-xl font-bold text-lg shadow-lg hover:bg-primary-pink/90 hover:shadow-xl transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {product.inStock ? (
                 <>
@@ -70,6 +70,14 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
                 'אזל מהמלאי'
               )}
             </button>
+
+            {/* Total Price */}
+            {quantity > 1 && (
+              <div className="text-center text-gray-600">
+                <span className="text-sm">סה״כ: </span>
+                <span className="font-bold text-primary-pink">{formatPrice(product.price * quantity)}</span>
+              </div>
+            )}
           </div>
         )}
 
@@ -79,7 +87,7 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="bg-green-50 text-green-700 px-4 py-3 rounded-xl flex items-center gap-2 text-sm font-bold"
+              className="mt-4 bg-green-50 text-green-700 px-6 py-3 rounded-xl flex items-center gap-2 text-sm font-bold shadow-sm"
             >
               <CheckCircle size={18} className="text-green-600" />
               המוצר נוסף לעגלה בהצלחה!
@@ -108,4 +116,3 @@ export default function AddToCartSection({ product }: AddToCartSectionProps) {
     </>
   );
 }
-
