@@ -1,11 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Product, categoryNames } from '@/types/product';
 import { formatPrice } from '@/lib/formatPrice';
-import { ShoppingCart, Eye, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingCart, Eye, Sparkles } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -14,21 +13,6 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onAddToCart, priority = false }: ProductCardProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const hasMultipleImages = product.images.length > 1;
-
-  const nextImage = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
-  };
-
-  const prevImage = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
-  };
-
   return (
     <div className="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full border border-gray-100 overflow-hidden hover:-translate-y-1">
       {/* Image Container - Vertical aspect ratio for product images */}
@@ -48,7 +32,7 @@ export default function ProductCard({ product, onAddToCart, priority = false }: 
             </span>
           )}
           <Image
-            src={product.images[currentImageIndex]}
+            src={product.images[0]}
             alt={product.name}
             fill
             priority={priority}
@@ -57,48 +41,6 @@ export default function ProductCard({ product, onAddToCart, priority = false }: 
             style={{ objectPosition: 'center center' }}
           />
         </Link>
-
-        {/* Navigation Arrows - Only for products with multiple images */}
-        {hasMultipleImages && (
-          <>
-            {/* Right Arrow (Previous - RTL) */}
-            <button
-              onClick={prevImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-white/90 backdrop-blur-sm text-base-black p-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary-pink hover:text-white hover:scale-110"
-              title="תמונה קודמת"
-            >
-              <ChevronRight size={18} />
-            </button>
-            
-            {/* Left Arrow (Next - RTL) */}
-            <button
-              onClick={nextImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-white/90 backdrop-blur-sm text-base-black p-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary-pink hover:text-white hover:scale-110"
-              title="תמונה הבאה"
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            {/* Image Indicators */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1.5">
-              {product.images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setCurrentImageIndex(index);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentImageIndex
-                      ? 'bg-primary-pink w-4'
-                      : 'bg-white/70 hover:bg-white'
-                  }`}
-                />
-              ))}
-            </div>
-          </>
-        )}
         
         {/* Hover Overlay Actions (Desktop) */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:flex items-center justify-center gap-3 z-20 pointer-events-none">

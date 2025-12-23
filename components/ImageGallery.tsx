@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ZoomIn } from 'lucide-react';
+import { ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ImageGalleryProps {
   images: string[];
@@ -12,6 +12,15 @@ interface ImageGalleryProps {
 
 export default function ImageGallery({ images, productName }: ImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState(0);
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = () => {
+    setSelectedImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setSelectedImage((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <div className="space-y-4 select-none sticky top-24">
@@ -37,6 +46,44 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
             />
           </motion.div>
         </AnimatePresence>
+
+        {/* Navigation Arrows - Only for products with multiple images */}
+        {hasMultipleImages && (
+          <>
+            {/* Right Arrow (Previous - RTL) */}
+            <button
+              onClick={prevImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 backdrop-blur-sm text-base-black p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary-pink hover:text-white hover:scale-110"
+              title="תמונה קודמת"
+            >
+              <ChevronRight size={24} />
+            </button>
+            
+            {/* Left Arrow (Next - RTL) */}
+            <button
+              onClick={nextImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/90 backdrop-blur-sm text-base-black p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-primary-pink hover:text-white hover:scale-110"
+              title="תמונה הבאה"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            {/* Image Indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === selectedImage
+                      ? 'bg-primary-pink w-6'
+                      : 'bg-white/70 hover:bg-white'
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
         
         {/* Zoom Icon */}
         <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -45,7 +92,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
       </div>
 
       {/* Thumbnails - Vertical aspect ratio */}
-      {images.length > 1 && (
+      {hasMultipleImages && (
         <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 scrollbar-hide justify-center">
           {images.map((image, index) => (
             <button
@@ -72,4 +119,3 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
     </div>
   );
 }
-
